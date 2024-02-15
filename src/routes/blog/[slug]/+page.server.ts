@@ -6,7 +6,7 @@ import { read } from '$app/server';
 export const load = (async ({ params }) => {
 	try {
 		const slug = params.slug;
-		const asset = read(`/src/content/posts/${slug}/+page.md`);
+		const asset = read(`/content/posts/${slug}/+page.md`);
 		const file = await asset.text();
 		const { content, frontmatter } = await parseMarkdown(file);
 

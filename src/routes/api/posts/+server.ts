@@ -16,7 +16,7 @@ interface Article extends ArticleMetadata {
 export const GET: RequestHandler = async () => {
 	try {
 		const articles: Article[] = await Promise.all(
-			Object.entries(import.meta.glob('/src/content/posts/**/+page.md')).map(
+			Object.entries(import.meta.glob('/content/posts/**/+page.md')).map(
 				async ([path, resolver]) => {
 					const resolvedData = await resolver();
 					console.log(resolvedData);
