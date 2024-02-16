@@ -7,5 +7,9 @@
 </script>
 
 <main>
-	{@html content}
+	<h1>{frontmatter.title}</h1>
+
+	<section>
+		{@html content}
+	</section>
 </main>

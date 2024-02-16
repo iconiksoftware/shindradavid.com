@@ -29,9 +29,19 @@ const highlighter = await getHighlighterCore({
 	langs: [
 		import('shiki/langs/javascript.mjs'),
 		import('shiki/langs/html.mjs'),
+		import('shiki/langs/css.mjs'),
+		import('shiki/langs/scss.mjs'),
 		import('shiki/langs/typescript.mjs'),
 		import('shiki/langs/python.mjs'),
-		import('shiki/langs/c.mjs')
+		import('shiki/langs/c.mjs'),
+		import('shiki/langs/sql.mjs'),
+		import('shiki/langs/nginx.mjs'),
+		import('shiki/langs/markdown.mjs'),
+		import('shiki/langs/lua.mjs'),
+		import('shiki/langs/json.mjs'),
+		import('shiki/langs/go.mjs'),
+		import('shiki/langs/docker.mjs'),
+		import('shiki/langs/dart.mjs')
 	],
 	loadWasm: getWasm
 });

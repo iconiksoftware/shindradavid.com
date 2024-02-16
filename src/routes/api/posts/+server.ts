@@ -16,17 +16,15 @@ interface Article extends ArticleMetadata {
 export const GET: RequestHandler = async () => {
 	try {
 		const articles: Article[] = await Promise.all(
-			Object.entries(import.meta.glob('/content/posts/**/+page.md')).map(
+			Object.entries(import.meta.glob('/src/lib/content/posts/**/post.md')).map(
 				async ([path, resolver]) => {
 					const resolvedData = await resolver();
-					console.log(resolvedData);
-
 					if (typeof resolvedData === 'object' && resolvedData != null) {
 						if ('metadata' in resolvedData) {
 							const metadata = resolvedData.metadata;
 							const articleMetadata: ArticleMetadata = metadata as any;
-							const articlePath = path.slice(11, -9).replace('/(article)', ''); // remove the ending /+page.md and starting ../..
-							return { path: articlePath, ...articleMetadata };
+							const slug = path.slice(23, -8);
+							return { slug, ...articleMetadata };
 						}
 					}
 				}
