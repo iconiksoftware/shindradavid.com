@@ -22,31 +22,30 @@ type ContentType = {
 	frontmatter: Frontmatter;
 };
 
-// plugins
-
-const highlighter = await getHighlighterCore({
-	themes: [import('shiki/themes/vitesse-light.mjs'), import('shiki/themes/vitesse-dark.mjs')],
-	langs: [
-		import('shiki/langs/javascript.mjs'),
-		import('shiki/langs/html.mjs'),
-		import('shiki/langs/css.mjs'),
-		import('shiki/langs/scss.mjs'),
-		import('shiki/langs/typescript.mjs'),
-		import('shiki/langs/python.mjs'),
-		import('shiki/langs/c.mjs'),
-		import('shiki/langs/sql.mjs'),
-		import('shiki/langs/nginx.mjs'),
-		import('shiki/langs/markdown.mjs'),
-		import('shiki/langs/lua.mjs'),
-		import('shiki/langs/json.mjs'),
-		import('shiki/langs/go.mjs'),
-		import('shiki/langs/docker.mjs'),
-		import('shiki/langs/dart.mjs')
-	],
-	loadWasm: getWasm
-});
-
 export const parseMarkdown = async (markdownFile: string): Promise<ContentType> => {
+	const highlighter = await getHighlighterCore({
+		themes: [import('shiki/themes/vitesse-light.mjs'), import('shiki/themes/vitesse-dark.mjs')],
+		langs: [
+			import('shiki/langs/javascript.mjs'),
+			import('shiki/langs/html.mjs'),
+			import('shiki/langs/css.mjs'),
+			import('shiki/langs/scss.mjs'),
+			import('shiki/langs/svelte.mjs'),
+			import('shiki/langs/typescript.mjs'),
+			import('shiki/langs/python.mjs'),
+			import('shiki/langs/c.mjs'),
+			import('shiki/langs/sql.mjs'),
+			import('shiki/langs/nginx.mjs'),
+			import('shiki/langs/markdown.mjs'),
+			import('shiki/langs/lua.mjs'),
+			import('shiki/langs/json.mjs'),
+			import('shiki/langs/go.mjs'),
+			import('shiki/langs/docker.mjs'),
+			import('shiki/langs/dart.mjs')
+		],
+		loadWasm: getWasm
+	});
+
 	const { content, data } = matter(markdownFile);
 
 	const result = await unified()
@@ -55,7 +54,6 @@ export const parseMarkdown = async (markdownFile: string): Promise<ContentType> 
 		.use(rehypeAutolinkHeadings, { behavior: 'append' })
 		.use(rehypeSlug)
 		.use(rehypeShikiFromHighlighter, highlighter, {
-			// or `theme` for a single theme
 			themes: {
 				light: 'vitesse-light',
 				dark: 'vitesse-dark'

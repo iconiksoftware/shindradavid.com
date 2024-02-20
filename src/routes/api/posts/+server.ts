@@ -2,6 +2,8 @@ import type { RequestHandler } from './$types';
 
 import { error, json } from '@sveltejs/kit';
 
+import { readdir } from 'fs/promises';
+
 interface ArticleMetadata {
 	title: string;
 	description: string;
@@ -15,6 +17,8 @@ interface Article extends ArticleMetadata {
 
 export const GET: RequestHandler = async () => {
 	try {
+		const contentDir = await readdir('src/lib/content');
+		console.log(contentDir);
 		const articles: Article[] = await Promise.all(
 			Object.entries(import.meta.glob('/src/lib/content/posts/**/post.md')).map(
 				async ([path, resolver]) => {
@@ -33,6 +37,7 @@ export const GET: RequestHandler = async () => {
 
 		return json(articles);
 	} catch (err) {
+		console.log(err);
 		error(500, 'Internal server error');
 	}
 };
