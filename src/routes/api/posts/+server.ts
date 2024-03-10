@@ -17,10 +17,8 @@ interface Article extends ArticleMetadata {
 
 export const GET: RequestHandler = async () => {
 	try {
-		const contentDir = await readdir('src/lib/content');
-		console.log(contentDir);
 		const articles: Article[] = await Promise.all(
-			Object.entries(import.meta.glob('/src/lib/content/posts/**/post.md')).map(
+			Object.entries(import.meta.glob('/content/posts/**/post.md')).map(
 				async ([path, resolver]) => {
 					const resolvedData = await resolver();
 					if (typeof resolvedData === 'object' && resolvedData != null) {
