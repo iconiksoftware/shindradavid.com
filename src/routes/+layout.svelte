@@ -1,3 +1,7 @@
+<script lang="ts">
+  import '../lib/styles/global.scss';
+</script>
+
 <header>
 	<nav>
 		<a href="/">Home</a>

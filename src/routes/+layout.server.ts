@@ -1,7 +1,9 @@
 import type { LayoutServerLoad } from './$types';
 
-export const load = (async ({ fetch }) => {
-	const response = await fetch('/api/posts');
-	const posts = await response.json();
+import { getBlogPosts } from '$lib/services/postsService.server';
+
+export const load = (async () => {
+	const posts = await getBlogPosts();
+
 	return { posts };
 }) satisfies LayoutServerLoad;

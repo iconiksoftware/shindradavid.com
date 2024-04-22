@@ -1,0 +1,17 @@
+.shiki {
+	border-radius: var(--spacing-xs);
+	padding: var(--spacing-md) var(--spacing-sm);
+	margin: var(--spacing-xs) auto var(--spacing-lg);
+	box-shadow: var(--shadow-elevation-medium);
+	overflow-x: auto;
+	max-width: var(--max-width-full);
+}
+
+pre {
+	margin: var(--spacing-sm);
+
+	code {
+		counter-reset: step;
+		counter-increment: step 0;
+	}
+}
