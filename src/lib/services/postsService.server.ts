@@ -41,6 +41,7 @@ export const getPosts = async () => {
 
 		return posts;
 	} catch (err) {
-		throw Error();
+		console.error(err);
+		throw Error(err);
 	}
 };
