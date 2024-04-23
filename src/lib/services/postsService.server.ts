@@ -34,14 +34,13 @@ export const getPosts = async () => {
 			const { data } = matter(file);
 
 			posts.push({
-				slug: markdownFile.slice(17, -9),
+				slug: markdownFile.slice(0, -3),
 				...(data as Frontmatter)
 			});
 		}
 
 		return posts;
 	} catch (err) {
-		console.error(err);
 		throw Error(err);
 	}
 };

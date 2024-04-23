@@ -7,3 +7,5 @@ export const load = (async () => {
 
 	return { posts };
 }) satisfies LayoutServerLoad;
+
+export const prerender = true;
