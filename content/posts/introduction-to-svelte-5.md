@@ -1,7 +1,7 @@
 ---
 title: Introduction to svelte 5
 description: An introduction to svelte 5
-thumbnailUrl: /assets/posts/introduction-to-svelte-5/thumbnail.png
+thumbnailUrl: /images/posts/introduction-to-svelte-5/thumbnail.png
 publishedOn: 2024-04-22
 tags:
   - svelte

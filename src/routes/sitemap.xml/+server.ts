@@ -1,12 +1,13 @@
 import type { RequestHandler } from './$types';
 
-import { getPosts } from '$lib/services/postsService.server';
+import { getBlogPosts } from '$lib/server/utils';
+
+import { siteUrl } from '$lib/config';
 
 export const GET: RequestHandler = async () => {
-	const posts = (await getPosts()).map((post) => `/blog/${post.slug}`);
+	const posts = (await getBlogPosts()).map((post) => `/blog/${post.slug}`);
 
-	const siteUrl = 'https://shindradavid.vercel.app';
-	const pages = ['/', '/my-work', '/blog', ...posts];
+	const pages = ['/', '/about-me', '/my-work', '/blog', ...posts];
 	const sitemap = `
     <?xml version="1.0" encoding="UTF-8" ?>
     <urlset

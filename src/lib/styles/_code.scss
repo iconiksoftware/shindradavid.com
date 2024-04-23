@@ -1,17 +1,16 @@
-.shiki {
+pre.shiki {
 	border-radius: var(--spacing-xs);
 	padding: var(--spacing-md) var(--spacing-sm);
 	margin: var(--spacing-xs) auto var(--spacing-lg);
-	box-shadow: var(--shadow-elevation-medium);
+	box-shadow: var(--shadow-sm);
 	overflow-x: auto;
-	max-width: var(--max-width-full);
-}
-
-pre {
-	margin: var(--spacing-sm);
+	tab-size: 2;
+	font-family: var(--ff-code);
+	font-size: var(--fs-sm);
 
 	code {
 		counter-reset: step;
-		counter-increment: step 0;
+		counter-increment: step 1;
+		line-height: 1.2;
 	}
 }

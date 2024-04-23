@@ -2,9 +2,7 @@ import type { PageServerLoad, EntryGenerator } from './$types';
 
 import fs from 'fs-extra';
 
-import path from 'path';
-
-import { getPosts } from '$lib/services/postsService.server';
+import { getBlogPosts } from '$lib/server/utils';
 
 import { unified } from 'unified';
 import remarkParse from 'remark-parse';
@@ -18,6 +16,8 @@ import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 
 import grayMatter from 'gray-matter';
 
+import { postDirPath } from '$lib/config';
+
 type Frontmatter = {
 	title: string;
 	description: string;
@@ -26,12 +26,10 @@ type Frontmatter = {
 	tags: string[];
 };
 
-const MARKDOWN_FILES_PATH = path.join(process.cwd(), '/content/posts');
-
 export const load = (async ({ params }) => {
 	const { slug } = params;
 
-	const markdownFile = await fs.readFile(`${MARKDOWN_FILES_PATH}/${slug}.md`, 'utf-8');
+	const markdownFile = await fs.readFile(`${postDirPath}/${slug}.md`, 'utf-8');
 
 	const { data: frontmatter, content: markdown } = grayMatter(markdownFile);
 
@@ -41,10 +39,7 @@ export const load = (async ({ params }) => {
 		.use(remarkParse)
 		.use(remarkRehype)
 		.use(rehypeShiki, {
-			themes: {
-				light: 'vitesse-light',
-				dark: 'vitesse-dark'
-			}
+			theme: 'vitesse-dark'
 		})
 		.use(rehypeStringify)
 		.use(rehypeSlug)
@@ -58,7 +53,7 @@ export const load = (async ({ params }) => {
 }) satisfies PageServerLoad;
 
 export const entries = (async () => {
-	const posts = await getPosts();
+	const posts = await getBlogPosts();
 	const slugs = posts.map((post) => ({ slug: post.slug }));
 	return slugs;
 }) satisfies EntryGenerator;

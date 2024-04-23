@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Syne:wght@400..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400..700&display=swap');
 
 /*
   - Syne + Inter
@@ -6,12 +8,9 @@
 
 :root {
 	// font-family
-	--ff-display: 'Ubuntu', serif;
-	--ff-mono: monospace;
-	--ff-sans: 'Montserrat', Helvetica, Arial, sans-serif;
-
-	--ff-body: ;
-	--ff-headings: ;
+	--ff-headings: 'Syne', serif;
+	--ff-body: 'Inter', Helvetica, Arial, sans-serif;
+	--ff-code: 'Fira Code', monospace;
 
 	// font-size
 	font-size: 62.5%;
@@ -24,16 +23,16 @@
 	--fs-2xl: 4rem;
 	--fs-3xl: 4.8rem;
 
-	@include screen-lg {
-		--fs-xs: 1.4rem;
-		--fs-sm: 1.6rem;
-		--fs-base: 1.8rem;
-		--fs-md: 2.4rem;
-		--fs-lg: 3.2rem;
-		--fs-xl: 4rem;
-		--fs-2xl: 4.8rem;
-		--fs-3xl: 5.6rem;
-	}
+	// @include screen-lg {
+	// 	--fs-xs: 1.4rem;
+	// 	--fs-sm: 1.6rem;
+	// 	--fs-base: 1.8rem;
+	// 	--fs-md: 2.4rem;
+	// 	--fs-lg: 3.2rem;
+	// 	--fs-xl: 4rem;
+	// 	--fs-2xl: 4.8rem;
+	// 	--fs-3xl: 5.6rem;
+	// }
 
 	@supports (font-size: clamp(1.6rem, 1.536rem + 0.18vw, 1.8rem)) {
 		--fs-xs: clamp(1.2rem, 1.136rem + 0.18vh, 1.4rem);
@@ -64,8 +63,45 @@ body {
 	-moz-osx-font-smoothing: grayscale;
 	line-height: 1.6;
 	font-size: var(--fs-base);
-	font-family: var(--ff-sans);
+	font-family: var(--ff-body);
 	font-weight: var(--fw-normal);
 	font-synthesis: none;
 	text-rendering: optimizeLegibility;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: var(--ff-headings);
+}
+
+code {
+	font-family: var(--ff-code);
+	font-size: var(--fs-sm);
+}
+
+:where(h2, h3, h4, h5, h6) {
+	.icon-link {
+		position: relative;
+
+		&::before {
+			content: '#';
+			font-family: var(--ff-sans);
+			font-size: inherit;
+			position: absolute;
+			left: 1ch;
+			top: 0;
+			line-height: 1;
+			opacity: 0;
+			text-decoration: none;
+			color: var(--txt-muted);
+		}
+	}
+
+	&:hover .icon-link::before {
+		opacity: 1;
+	}
 }

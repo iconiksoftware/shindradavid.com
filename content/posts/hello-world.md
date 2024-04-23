@@ -1,11 +1,13 @@
 ---
 title: Hello World
 description: This is my first blog post
-thumbnailUrl: /assets/posts/hello-world/thumbnail.png
+thumbnailUrl: /images/posts/hello-world/thumbnail.png
 publishedOn: 2024-04-21
 tags:
   - html
   - sveltekit
+  - typescript
+  - angular
 ---
 
 ## Learn Javascript

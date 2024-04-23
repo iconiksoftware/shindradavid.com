@@ -1,9 +1,9 @@
 import type { LayoutServerLoad } from './$types';
 
-import { getPosts } from '$lib/services/postsService.server';
+import { getBlogPosts } from '$lib/server/utils';
 
 export const load = (async () => {
-	const posts = await getPosts();
+	const posts = await getBlogPosts();
 
 	return { posts };
 }) satisfies LayoutServerLoad;
