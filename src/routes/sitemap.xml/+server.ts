@@ -1,9 +1,9 @@
 import type { RequestHandler } from './$types';
 
-import { getBlogPosts } from '$lib/services/postsService.server';
+import { getPosts } from '$lib/services/postsService.server';
 
 export const GET: RequestHandler = async () => {
-	const posts = (await getBlogPosts()).map((post) => `/blog/${post.slug}`);
+	const posts = (await getPosts()).map((post) => `/blog/${post.slug}`);
 
 	const siteUrl = 'https://shindradavid.vercel.app';
 	const pages = ['/', '/my-work', '/blog', ...posts];

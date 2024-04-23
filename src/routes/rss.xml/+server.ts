@@ -1,11 +1,11 @@
 import type { RequestHandler } from './$types';
 
-import { getBlogPosts } from '$lib/services/postsService.server';
+import { getPosts } from '$lib/services/postsService.server';
 
 import RSS from 'rss';
 
 export const GET: RequestHandler = async () => {
-	const posts = await getBlogPosts();
+	const posts = await getPosts();
 	const siteUrl = 'https://shindradavid.vercel.app';
 
 	const feed = new RSS({

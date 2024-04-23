@@ -1,4 +1,6 @@
-import { read } from '$app/server';
+import fs from 'fs-extra';
+
+import path from 'path';
 
 import matter from 'gray-matter';
 
@@ -16,20 +18,26 @@ interface Post extends Frontmatter {
 	slug: string;
 }
 
-export const getBlogPosts = async () => {
-	try {
-		const posts: Post[] = await Promise.all(
-			Object.entries(import.meta.glob('/src/routes/blog/**/+page.md')).map(async ([path]) => {
-				const asset = read(path);
-				const file = await asset.text();
-				const { data } = matter(file);
+const MARKDOWN_FILES_PATH = path.join(process.cwd(), '/content/posts');
 
-				return {
-					slug: path.slice(17, -9),
-					...(data as Frontmatter)
-				};
-			})
-		);
+export const getPosts = async () => {
+	try {
+		const markdownFiles = (await fs.readdir(MARKDOWN_FILES_PATH)).filter((fileName) => {
+			return fileName.endsWith('.md');
+		});
+
+		const posts: Post[] = [];
+
+		for (const markdownFile of markdownFiles) {
+			const file = await fs.readFile(`${MARKDOWN_FILES_PATH}/${markdownFile}`, 'utf-8');
+
+			const { data } = matter(file);
+
+			posts.push({
+				slug: markdownFile.slice(17, -9),
+				...(data as Frontmatter)
+			});
+		}
 
 		return posts;
 	} catch (err) {
