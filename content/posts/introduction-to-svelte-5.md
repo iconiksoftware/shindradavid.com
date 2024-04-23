@@ -9,6 +9,10 @@ tags:
 
 # Introduction to svelte 5
 
+## What changed
+
+### Syntax
+
 ```svelte
 <script>
 	let count = 0;

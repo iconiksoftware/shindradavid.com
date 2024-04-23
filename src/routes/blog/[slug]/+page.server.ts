@@ -11,6 +11,10 @@ import remarkParse from 'remark-parse';
 import remarkRehype from 'remark-rehype';
 import rehypeStringify from 'rehype-stringify';
 import rehypeShiki from '@shikijs/rehype';
+import { rehypeToc } from '$lib/markdown/plugins';
+
+import rehypeSlug from 'rehype-slug';
+import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 
 import grayMatter from 'gray-matter';
 
@@ -43,6 +47,9 @@ export const load = (async ({ params }) => {
 			}
 		})
 		.use(rehypeStringify)
+		.use(rehypeSlug)
+		.use(rehypeAutolinkHeadings, { behavior: 'append' })
+		.use(rehypeToc)
 		.process(markdown);
 
 	const content = file.toString();
