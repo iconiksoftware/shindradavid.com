@@ -9,3 +9,5 @@ export type Frontmatter = {
 export interface Post extends Frontmatter {
 	slug: string;
 }
+
+export type Theme = 'dark' | 'light' | 'system';
