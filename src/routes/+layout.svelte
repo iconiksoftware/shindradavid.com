@@ -1,13 +1,5 @@
 <script lang="ts">
 	import '../lib/styles/global.scss';
-
-	import type { LayoutData } from './$types';
-
-	import { theme } from '$lib/stores';
-
-	export let data: LayoutData;
-
-	theme.update(data.theme);
 </script>
 
 <svelte:head>
@@ -27,9 +19,7 @@
 	</nav>
 </header>
 
-<div class="theme {$theme ?? data.theme}">
-	<slot />
-</div>
+<slot />
 
 <footer class="footer">
 	<div class="footer__misc">

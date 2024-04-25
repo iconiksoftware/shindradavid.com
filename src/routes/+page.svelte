@@ -3,23 +3,19 @@
 
 	import { PostCard } from '$lib/components';
 
-	import { theme } from '$lib/stores';
-	import type { Theme } from '$lib/types';
+	import { setTheme } from '$lib/utils';
 
 	export let data: PageData;
 
 	const posts = data.posts;
-
-	function setTheme(newTheme: Theme) {
-		console.log('changing theme');
-		document.body.setAttribute('data-theme', newTheme);
-	}
 </script>
 
 <main>
 	<h1>Home</h1>
 
-	<button on:click={() => setTheme('dark')}>Change theme</button>
+	<button on:click={() => setTheme('dark')}>Dark</button>
+	<button on:click={() => setTheme('light')}>Light</button>
+	<button on:click={() => setTheme('system')}>System</button>
 
 	<section>
 		<h2>Blog</h2>

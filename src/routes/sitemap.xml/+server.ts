@@ -1,6 +1,6 @@
 import type { RequestHandler } from './$types';
 
-import { getBlogPosts } from '$lib/server/utils';
+import { getBlogPosts } from '$lib/server/markdown/utils';
 
 import { siteUrl } from '$lib/config';
 

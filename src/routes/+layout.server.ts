@@ -1,12 +1,11 @@
 import type { LayoutServerLoad } from './$types';
 
-import { getBlogPosts } from '$lib/server/utils';
+import { getBlogPosts } from '$lib/server/markdown/utils';
 
-export const load = (async ({ locals }) => {
+export const load = (async () => {
 	const posts = await getBlogPosts();
-	const { theme } = locals;
 
-	return { posts, theme };
+	return { posts };
 }) satisfies LayoutServerLoad;
 
 export const prerender = true;

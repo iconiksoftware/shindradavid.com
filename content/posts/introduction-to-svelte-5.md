@@ -13,6 +13,8 @@ tags:
 
 ### Syntax
 
+{% icon "svelte" file "+page.svelte" %}
+
 ```svelte
 <script>
 	let count = 0;

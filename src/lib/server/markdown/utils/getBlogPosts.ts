@@ -1,15 +1,14 @@
+import path from 'path';
+
 import fs from 'fs-extra';
 
-import matter from 'gray-matter';
-
-// import { compareDesc } from 'date-fns';
-
-import { postDirPath } from '$lib/config';
+import grayMatter from 'gray-matter';
 
 import type { Post, Frontmatter } from '$lib/types';
 
 export default async () => {
 	try {
+		const postDirPath = path.join(process.cwd(), '/content/posts');
 		const markdownFiles = (await fs.readdir(postDirPath)).filter((fileName) => {
 			return fileName.endsWith('.md');
 		});
@@ -19,7 +18,7 @@ export default async () => {
 		for (const markdownFile of markdownFiles) {
 			const file = await fs.readFile(`${postDirPath}/${markdownFile}`, 'utf-8');
 
-			const { data } = matter(file);
+			const { data } = grayMatter(file);
 
 			posts.push({
 				slug: markdownFile.slice(0, -3),
