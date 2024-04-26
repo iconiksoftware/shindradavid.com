@@ -1,6 +1,8 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 
+	// import {} from 'svelte-'
+
 	onMount(() => {
 		const copyBtnElement = document.querySelectorAll('.copy');
 

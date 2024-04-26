@@ -13,7 +13,7 @@ export default async () => {
 			return fileName.endsWith('.md');
 		});
 
-		const posts: Post[] = [];
+		let posts: Post[] = [];
 
 		for (const markdownFile of markdownFiles) {
 			const file = await fs.readFile(`${postDirPath}/${markdownFile}`, 'utf-8');
@@ -25,6 +25,10 @@ export default async () => {
 				...(data as Frontmatter)
 			});
 		}
+
+		posts = posts.sort((firstItem, secondItem) => {
+			return new Date(secondItem.publishedOn).getTime() - new Date(firstItem.publishedOn).getTime();
+		});
 
 		return posts;
 	} catch (err) {

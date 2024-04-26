@@ -1,6 +1,7 @@
 import { unified } from 'unified';
 import remarkParse from 'remark-parse';
 import remarkRehype from 'remark-rehype';
+import remarkGfm from 'remark-gfm';
 import rehypeStringify from 'rehype-stringify';
 import rehypeShiki from '@shikijs/rehype';
 import rehypeSlug from 'rehype-slug';
@@ -36,6 +37,7 @@ export default async <F>(markdown: string) => {
 	const { data, content } = grayMatter(markdown);
 
 	const file = await unified()
+		.use(remarkGfm)
 		.use(remarkParse)
 		.use(remarkRehype, { allowDangerousHtml: true })
 		.use(rehypeShiki, {
