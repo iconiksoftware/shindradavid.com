@@ -109,8 +109,8 @@ $gray-950: hsl(0, 0%, 16%);
 }
 
 @mixin dark-theme {
-	--clr-accent-1: ;
-	--clr-accent-2: ;
+	--clr-accent-1: hsl(40, 97%, 54%);
+	--clr-txt-primary-on-bg-accent-1: hsl(210, 11%, 11%);
 	--clr-error: hsl(0, 86%, 44%);
 	--clr-ok: hsl(142, 72%, 29%);
 	--clr-info: hsl(221, 83%, 53%);
@@ -121,17 +121,17 @@ $gray-950: hsl(0, 0%, 16%);
 	--clr-bg-accent: #be1e2d;
 	--clr-txt-primary-on-bg-accent: #fafafa;
 	// bg primary
-	--clr-bg-primary: #000;
-	--clr-txt-primary-on-bg-primary: ;
-	--clr-txt-secondary-on-bg-primary: ;
-	--clr-txt-tertiary-on-bg-primary: ;
+	--clr-bg-primary: hsl(210, 11%, 11%);
+	--clr-txt-primary-on-bg-primary: hsl(0, 0%, 100%);
+	--clr-txt-secondary-on-bg-primary: hsl(0, 0%, 90%);
+	--clr-txt-tertiary-on-bg-primary: hsl(0, 0%, 80%);
 	--clr-txt-error-on-bg-primary: ;
 	--clr-txt-success-on-bg-primary: ;
 	--clr-txt-warning-on-bg-primary: ;
 	--clr-txt-info-on-bg-primary: ;
-	--clr-divider-primary-on-bg-primary: ;
-	--clr-divider-secondary-on-bg-primary: ;
-	--clr-divider-tertiary-on-bg-primary: ;
+	--clr-outline-primary-on-bg-primary: ;
+	--clr-outline-secondary-on-bg-primary: hsl(0, 0%, 22%);
+	--clr-outline-tertiary-on-bg-primary: ;
 	// bg secondary
 	--clr-bg-secondary: ;
 	--clr-txt-primary-on-bg-secondary: ;
@@ -157,8 +157,8 @@ $gray-950: hsl(0, 0%, 16%);
 	--clr-divider-secondary-on-bg-tertiary: ;
 	--clr-divider-tertiary-on-bg-tertiary: ;
 	// bg button
-	--clr-btn-bg-primary: ;
-	--clr-txt-primary-on-btn-bg-primary: ;
+	--clr-btn-bg-primary: var(--clr-accent-1);
+	--clr-txt-primary-on-btn-bg-primary: var(--clr-txt-primary-on-bg-accent-1);
 	--clr-txt-secondary-on-btn-bg-primary: ;
 	--clr-btn-bg-secondary: ;
 	--clr-txt-primary-on-btn-bg-secondary: ;
@@ -201,8 +201,7 @@ $gray-950: hsl(0, 0%, 16%);
 }
 
 @mixin light-theme {
-	--clr-accent-1: ;
-	--clr-accent-2: ;
+	--clr-accent-1: hsl(40, 97%, 54%);
 	--clr-error: hsl(0, 86%, 44%);
 	--clr-ok: hsl(142, 72%, 29%);
 	--clr-info: hsl(221, 83%, 53%);
@@ -214,16 +213,16 @@ $gray-950: hsl(0, 0%, 16%);
 	--clr-txt-primary-on-bg-accent: #fafafa;
 	// bg primary
 	--clr-bg-primary: #fff;
-	--clr-txt-primary-on-bg-primary: ;
+	--clr-txt-primary-on-bg-primary: hsl(240, 8%, 9%);
 	--clr-txt-secondary-on-bg-primary: ;
 	--clr-txt-tertiary-on-bg-primary: ;
 	--clr-txt-error-on-bg-primary: ;
 	--clr-txt-success-on-bg-primary: ;
 	--clr-txt-warning-on-bg-primary: ;
 	--clr-txt-info-on-bg-primary: ;
-	--clr-divider-primary-on-bg-primary: ;
-	--clr-divider-secondary-on-bg-primary: ;
-	--clr-divider-tertiary-on-bg-primary: ;
+	--clr-outline-primary-on-bg-primary: ;
+	--clr-outline-secondary-on-bg-primary: hsl(0, 0%, 10%);
+	--clr-outline-tertiary-on-bg-primary: ;
 	// bg secondary
 	--clr-bg-secondary: ;
 	--clr-txt-primary-on-bg-secondary: ;
@@ -337,4 +336,8 @@ h6 {
 
 a {
 	color: inherit;
+
+	&:hover {
+		color: var(--clr-accent-1);
+	}
 }

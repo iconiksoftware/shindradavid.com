@@ -11,5 +11,15 @@ export default defineConfig({
 		host: '0.0.0.0',
 		port: 3000,
 		strictPort: true
+	},
+	css: {
+		preprocessorOptions: {
+			scss: {
+				additionalData: `
+          @use 'src/lib/styles/mixins';
+          @use 'src/lib/styles/breakpoints';
+        `
+			}
+		}
 	}
 });

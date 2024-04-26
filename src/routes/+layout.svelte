@@ -1,5 +1,8 @@
 <script lang="ts">
 	import '../lib/styles/global.scss';
+
+	import Header from './Header.svelte';
+	import Footer from './Footer.svelte';
 </script>
 
 <svelte:head>
@@ -9,28 +12,6 @@
 	<link rel="alternate" href="/rss.xml" type="application/rss+xml" title="RSS" />
 </svelte:head>
 
-<header>
-	<nav>
-		<a href="/">Home</a>
-		<a href="/about-me">About me</a>
-		<a href="/what-i-do">What i do</a>
-		<a href="/my-work">My work</a>
-		<a href="/blog">Blog</a>
-	</nav>
-</header>
-
+<Header />
 <slot />
-
-<footer class="footer">
-	<div class="footer__misc">
-		<p>&copy; Shindra David {new Date().getFullYear()}. All rights reserved.</p>
-		<p>
-			Built with <span style="color: hsl(0, 74%, 50%);"><i class="ri-heart-fill" /></span> and
-			<span style="color: hsl(12, 98%, 50%);"><i class="ri-svelte-fill"></i></span>
-			by
-			<a href="http://twitter.com/shindradavid" target="_blank" rel="noopener noreferrer">
-				Shindra David
-			</a>
-		</p>
-	</div>
-</footer>
+<Footer />
