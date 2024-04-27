@@ -41,7 +41,7 @@ export default async <F>(markdown: string) => {
 		.use(remarkParse)
 		.use(remarkRehype, { allowDangerousHtml: true })
 		.use(rehypeShiki, {
-			theme: 'vitesse-dark'
+			theme: 'github-dark-dimmed'
 		})
 		.use(rehypeStringify, { allowDangerousHtml: true })
 		.use(rehypeSlug)

@@ -21,8 +21,17 @@
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
-		@include mixins.add-section-lr-padding();
 		height: var(--header-height);
+		padding: var(--spacing-sm);
+		position: fixed;
+		top: var(--spacing-sm);
+		left: 50%;
+		transform: translate(-50%, 0);
+		background-color: var(--clr-bg-primary-alpha);
+		backdrop-filter: blur(3px);
+		width: 80vw;
+		border-radius: var(--radius-xs);
+		box-shadow: var(--shadow-md);
 
 		&__nav {
 			display: flex;
