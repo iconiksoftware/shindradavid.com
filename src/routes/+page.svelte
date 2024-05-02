@@ -5,7 +5,11 @@
 
 	import { setTheme } from '$lib/utils';
 
-	export let data: PageData;
+	interface Props {
+		data: PageData;
+	}
+
+	let { data }: Props = $props();
 
 	const posts = data.posts;
 </script>

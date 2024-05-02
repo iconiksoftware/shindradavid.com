@@ -1,6 +1,10 @@
 <script lang="ts">
-	export let href: string;
-	export let name: string;
+	interface Props {
+		href: string;
+		name: string;
+	}
+
+	let { href, name }: Props = $props();
 </script>
 
 <a {href}>{name}</a>

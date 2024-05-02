@@ -1,5 +1,7 @@
 <script lang="ts">
 	import NavLink from './NavLink.svelte';
+
+	let openDrawer = $state(false);
 </script>
 
 <header class="header">
