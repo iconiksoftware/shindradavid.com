@@ -12,5 +12,11 @@
 <style lang="scss">
 	a {
 		text-decoration: none;
+		font-size: var(--fs-sm);
+		font-weight: var(--fw-medium);
+
+		&:hover {
+			font-weight: var(--fw-bold);
+		}
 	}
 </style>

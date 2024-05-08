@@ -17,7 +17,7 @@
 
 	<h1>{frontmatter.title}</h1>
 
-	<section>
+	<section class="content">
 		{@html html}
 	</section>
 </main>
@@ -26,6 +26,11 @@
 	main {
 		.thumbnail {
 			height: 100%;
+		}
+
+		.content {
+			width: 50vw;
+			margin: 0 auto;
 		}
 	}
 </style>
