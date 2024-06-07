@@ -3,6 +3,8 @@
 
 	import Header from './Header.svelte';
 	import Footer from './Footer.svelte';
+
+	const { children } = $props();
 </script>
 
 <svelte:head>
@@ -13,5 +15,5 @@
 </svelte:head>
 
 <Header />
-<slot />
+{@render children()}
 <Footer />

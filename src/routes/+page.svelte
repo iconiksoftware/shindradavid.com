@@ -11,15 +11,15 @@
 
 	let { data }: Props = $props();
 
-	const posts = data.posts;
+	const { posts } = data;
 </script>
 
 <main>
 	<h1>Home</h1>
 
-	<button on:click={() => setTheme('dark')}>Dark</button>
-	<button on:click={() => setTheme('light')}>Light</button>
-	<button on:click={() => setTheme('system')}>System</button>
+	<button onclick={() => setTheme('dark')}>Dark</button>
+	<button onclick={() => setTheme('light')}>Light</button>
+	<button onclick={() => setTheme('system')}>System</button>
 
 	<section>
 		<h2>Blog</h2>

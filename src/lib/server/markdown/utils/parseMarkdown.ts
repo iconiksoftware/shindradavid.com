@@ -13,14 +13,15 @@ import { rehypeToc, rehypeCopyCode } from '$lib/server/markdown/plugins';
 function searchAndReplace(markdown: string): string {
 	const pattern = /{%\s*icon\s*"([^"]+)"\s*file\s*"([^"]+)"\s*%}/g;
 
-	const icons = [
-		{ name: 'javascript', class: 'ri-javascript-fill' },
-		{ name: 'svelte', class: 'ri-svelte-fill' },
-		{ name: 'terminal', class: 'ri-terminal-box-fill' }
-	];
-
 	const replacedMarkdown = markdown.replace(pattern, (_, iconName, file) => {
+		const icons = [
+			{ name: 'javascript', class: 'ri-javascript-fill' },
+			{ name: 'svelte', class: 'ri-svelte-fill' },
+			{ name: 'terminal', class: 'ri-terminal-box-fill' }
+		];
+
 		const iconClass = icons.find((icon) => icon.name === iconName)?.class;
+
 		return `<div class="code-header">
               <span class="code-header__icon ${iconName}">
                 <i class="${iconClass ?? 'ri-code-s-slash-line'}"></i>
