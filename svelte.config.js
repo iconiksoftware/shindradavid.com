@@ -14,6 +14,7 @@ const config = {
 					prependData: `
             @use 'src/lib/styles/mixins';
             @use 'src/lib/styles/breakpoints';
+            @use 'src/lib/styles/utils';
           `
 				}
 			}

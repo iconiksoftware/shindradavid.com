@@ -18,6 +18,7 @@ export default defineConfig({
 				additionalData: `
           @use 'src/lib/styles/mixins';
           @use 'src/lib/styles/breakpoints';
+          @use 'src/lib/styles/utils';
         `
 			}
 		}
