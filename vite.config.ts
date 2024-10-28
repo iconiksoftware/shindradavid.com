@@ -16,9 +16,9 @@ export default defineConfig({
 		preprocessorOptions: {
 			scss: {
 				additionalData: `
-          @use 'src/lib/styles/mixins';
-          @use 'src/lib/styles/breakpoints';
-          @use 'src/lib/styles/utils';
+          @use 'src/styles/mixins';
+          @use 'src/styles/breakpoints';
+          @use 'src/styles/utils';
         `
 			}
 		}
