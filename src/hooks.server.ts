@@ -8,7 +8,7 @@ export const handle = (async ({ resolve, event }) => {
 	const { cookies, locals } = event;
 
 	// eslint-disable-next-line @typescript-eslint/no-explicit-any
-	const theme = cookies.get('theme') ?? (defaultTheme as Theme);
+	const theme = (cookies.get('theme') ?? defaultTheme) as Theme;
 
 	if (!theme) {
 		locals.theme = defaultTheme;
