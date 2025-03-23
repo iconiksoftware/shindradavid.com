@@ -10,3 +10,5 @@ export { default as Nodejs } from './Nodejs.svelte';
 export { default as Code } from './Code.svelte';
 export { default as PaintBrush } from './PaintBrush.svelte';
 export { default as CloudComputing } from './CloudComputing.svelte';
+export { default as Lua } from './Lua.svelte';
+export { default as Redis } from './Redis.svelte';
