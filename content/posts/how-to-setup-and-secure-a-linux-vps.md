@@ -1,13 +1,10 @@
 ---
-title: Hello World
-description: This is my first blog post
-thumbnailUrl: /images/posts/hello-world/thumbnail.png
-publishedOn: 2024-04-21
+title: How to setup and secure a linux VPS
+description: This guide covers everything you need to know about setting up a Linux VPS, including SSH setup, security best practices, firewall configuration, and performance optimization.
+thumbnailUrl: /images/posts/how-to-setup-and-secure-a-linux-vps/thumbnail.png
+publishedOn: 2025-03-23
 tags:
-  - html
-  - sveltekit
-  - typescript
-  - angular
+  - linux
 ---
 
 ## Learn Javascript

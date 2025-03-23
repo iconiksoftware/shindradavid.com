@@ -16,21 +16,6 @@ $breakpoints: (
 	}
 }
 
-// ASPECT RATIO
-// eg. @include responsive-ratio(16,9);
-@mixin responsive-ratio($x, $y, $pseudo: false) {
-	$padding: unquote(($y / $x) * 100 + '%');
-	@if $pseudo {
-		&:before {
-			@include pseudo($pos: relative);
-			width: 100%;
-			padding-top: $padding;
-		}
-	} @else {
-		padding-top: $padding;
-	}
-}
-
 // Z INDEX
 $z-layers: (
 	'max': 9999,
@@ -82,15 +67,15 @@ $z-layers: (
 
 	@include respond-to('md-screens') {
 		padding: {
-			right: 32px;
-			left: 32px;
+			right: 96px;
+			left: 96px;
 		}
 	}
 
 	@include respond-to('lg-screens') {
 		padding: {
-			right: 96px;
-			left: 96px;
+			right: 180px;
+			left: 180px;
 		}
 	}
 

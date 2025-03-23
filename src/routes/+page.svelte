@@ -21,13 +21,31 @@
 	<button onclick={() => setTheme('light')}>Light</button>
 	<button onclick={() => setTheme('system')}>System</button>
 
-	<section>
-		<h2>Blog</h2>
+	<section class="posts">
+		<header class="posts__header">
+			<h2 class="title">Blog</h2>
+			<p class="subtitle">
+				I write about software engineering, leadership, and productivity. I also share my thoughts
+				on the tech industry and how to navigate it.
+			</p>
+		</header>
 
-		<div>
+		<div class="posts__container">
 			{#each posts as post}
 				<PostCard {post} />
 			{/each}
 		</div>
+
+		<a href="/blog">View all</a>
 	</section>
 </main>
+
+<style lang="scss">
+	.posts {
+		&__container {
+			display: grid;
+			grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+			gap: var(--spacing-lg);
+		}
+	}
+</style>

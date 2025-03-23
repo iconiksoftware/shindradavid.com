@@ -1,0 +1,12 @@
+export { default as Expo } from './Expo.svelte';
+export { default as Svelte } from './Svelte.svelte';
+export { default as Figma } from './Figma.svelte';
+export { default as Linux } from './Linux.svelte';
+export { default as NestJS } from './NestJS.svelte';
+export { default as Postgresql } from './Postgresql.svelte';
+export { default as React } from './React.svelte';
+export { default as Javascript } from './Javascript.svelte';
+export { default as Nodejs } from './Nodejs.svelte';
+export { default as Code } from './Code.svelte';
+export { default as PaintBrush } from './PaintBrush.svelte';
+export { default as CloudComputing } from './CloudComputing.svelte';

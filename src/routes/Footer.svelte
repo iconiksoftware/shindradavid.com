@@ -11,6 +11,7 @@
 </footer>
 
 <style lang="scss">
+	@use '../styles/utils';
 	.footer {
 		text-align: center;
 		display: flex;
@@ -19,7 +20,7 @@
 		margin: var(--spacing-lg) 0 0 0;
 		padding: var(--spacing-lg) 0;
 		border-top: 1px solid var(--clr-outline-secondary-on-bg-primary);
-		@include mixins.add-section-lr-padding();
+		@include utils.add-section-lr-padding();
 
 		p {
 			margin: 0;

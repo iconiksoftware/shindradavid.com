@@ -10,7 +10,7 @@
 	const { html, frontmatter } = data;
 </script>
 
-<main>
+<main class="page">
 	<figure class="thumbnail">
 		<img src={frontmatter.thumbnailUrl} alt={frontmatter.title} />
 	</figure>
@@ -23,14 +23,20 @@
 </main>
 
 <style lang="scss">
-	main {
+	@use '../../../styles/utils';
+	.page {
+		width: 100vw;
+		margin: 0 auto;
+
+		@include utils.respond-to('md-screens') {
+			width: 50vw;
+		}
+
 		.thumbnail {
 			height: 100%;
 		}
 
 		.content {
-			width: 50vw;
-			margin: 0 auto;
 		}
 	}
 </style>
