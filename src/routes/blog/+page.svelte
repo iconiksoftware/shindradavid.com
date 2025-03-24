@@ -16,8 +16,8 @@
 	<header class="page-header">
 		<h1>Blog</h1>
 		<p>
-			I write about software engineering, leadership, and productivity. I also share my thoughts on
-			the tech industry and how to navigate it.
+			Join me as I explore new technologies, tackle coding challenges, and share my experiences in
+			the world of software development.
 		</p>
 	</header>
 
@@ -43,6 +43,11 @@
 			flex-direction: column;
 			align-items: center;
 			padding: var(--spacing-lg) 0;
+
+			@include utils.respond-to('md-screens') {
+				width: 50vw;
+				margin: 0 auto;
+			}
 
 			p {
 				text-align: center;

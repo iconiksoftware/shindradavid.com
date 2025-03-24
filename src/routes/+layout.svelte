@@ -116,6 +116,10 @@
 		box-shadow: var(--shadow-md);
 		border: 1px solid #ffffff;
 
+		@include utils.respond-to('lg-screens') {
+			width: 72vw;
+		}
+
 		&__logo {
 			img {
 				height: 48px;
@@ -126,22 +130,22 @@
 
 		&__desktop-nav {
 			display: none;
-			flex-direction: column;
-			align-items: center;
-			gap: var(--spacing-lg);
-			position: absolute;
-			top: calc(var(--header-height) + var(--spacing-sm));
-			left: 50%;
-			transform: translate(-50%, 0);
-			width: 80vw;
-			background-color: var(--clr-bg-primary-alpha);
-			backdrop-filter: blur(4px);
-			padding: var(--spacing-lg) 0;
+
+			@include utils.respond-to('lg-screens') {
+				display: flex;
+				align-items: center;
+				gap: var(--spacing-xl);
+			}
 		}
 
 		&__cta {
-			border-radius: 64px;
 			display: none;
+
+			@include utils.respond-to('lg-screens') {
+				display: block;
+				border-radius: 64px;
+				font-weight: var(--fw-bold);
+			}
 		}
 
 		&__burger {
@@ -152,6 +156,10 @@
 			display: flex;
 			align-items: center;
 			justify-content: center;
+
+			@include utils.respond-to('lg-screens') {
+				display: none;
+			}
 		}
 	}
 
@@ -178,6 +186,10 @@
 		transition:
 			max-height 0.4s ease-in-out,
 			opacity 0.3s ease-in-out;
+
+		@include utils.respond-to('lg-screens') {
+			display: none;
+		}
 
 		&.open {
 			max-height: 300px;

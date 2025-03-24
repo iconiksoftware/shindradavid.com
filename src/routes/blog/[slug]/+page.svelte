@@ -10,12 +10,12 @@
 	const { html, frontmatter } = data;
 </script>
 
-<main class="page">
+<main>
+	<h1>{frontmatter.title}</h1>
+
 	<figure class="thumbnail">
 		<img src={frontmatter.thumbnailUrl} alt={frontmatter.title} />
 	</figure>
-
-	<h1>{frontmatter.title}</h1>
 
 	<section class="content">
 		{@html html}
@@ -24,10 +24,22 @@
 
 <style lang="scss">
 	@use '../../../styles/utils';
-	.page {
+	main {
 		@include utils.respond-to('md-screens') {
 			width: 50vw;
 			margin: 0 auto;
+		}
+
+		h1 {
+			text-align: center;
+			margin-top: var(--spacing-lg);
+			margin-bottom: var(--spacing-md);
+			margin-left: auto;
+			margin-right: auto;
+
+			@include utils.respond-to('md-screens') {
+				width: 40vw;
+			}
 		}
 
 		.thumbnail {
@@ -35,6 +47,7 @@
 		}
 
 		.content {
+			margin-top: var(--spacing-lg);
 		}
 	}
 </style>

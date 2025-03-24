@@ -174,6 +174,8 @@
 </main>
 
 <style lang="scss">
+	@use '../../styles/utils';
+
 	main {
 		section > p {
 			margin-bottom: var(--spacing-lg);
@@ -184,15 +186,40 @@
 			flex-direction: column;
 			align-items: center;
 			padding: var(--spacing-lg) 0;
+			margin: var(--spacing-xl) auto;
+
+			@include utils.respond-to('md-screens') {
+				width: 40vw;
+				margin: var(--spacing-xl) auto;
+			}
 
 			p {
 				text-align: center;
 			}
 		}
 
+		.my-journey {
+			@include utils.respond-to('md-screens') {
+				width: 50vw;
+				margin: 0 auto;
+			}
+		}
+
 		.skills {
+			@include utils.respond-to('md-screens') {
+				width: 50vw;
+				margin: 0 auto;
+			}
+
 			&__header {
-				padding-bottom: var(--spacing-md);
+				padding-bottom: var(--spacing-lg);
+				display: flex;
+				align-items: center;
+				flex-direction: column;
+
+				p {
+					text-align: center;
+				}
 			}
 
 			&__container {

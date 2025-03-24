@@ -26,7 +26,18 @@
 		color: var(--clr-txt-primary-on-btn-bg-primary);
 	}
 
+	&.btn-primary {
+		background-color: var(--clr-btn-bg-primary);
+		color: var(--clr-txt-primary-on-btn-bg-primary);
+	}
+
 	&.secondary {
+		width: 100%;
+		background-color: var(--clr-btn-bg-secondary);
+		color: var(--clr-txt-primary-on-btn-bg-secondary);
+	}
+
+	&.btn-secondary {
 		width: 100%;
 		background-color: var(--clr-btn-bg-secondary);
 		color: var(--clr-txt-primary-on-btn-bg-secondary);
