@@ -25,11 +25,9 @@
 <style lang="scss">
 	@use '../../../styles/utils';
 	.page {
-		width: 100vw;
-		margin: 0 auto;
-
 		@include utils.respond-to('md-screens') {
 			width: 50vw;
+			margin: 0 auto;
 		}
 
 		.thumbnail {

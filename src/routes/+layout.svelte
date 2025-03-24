@@ -1,11 +1,35 @@
 <script lang="ts">
 	import '../styles/global.scss';
 
+	import type { LayoutData } from './$types';
+
 	import NavLink from './NavLink.svelte';
 
-	const { children } = $props();
+	import { detectClickOutside } from '$lib/actions';
+
+	import { afterNavigate } from '$app/navigation';
+
+	import type { Snippet } from 'svelte';
+
+	import { setThemeContext } from '$lib/state.svelte';
+	import ThemeSwitcher from '$lib/components/ThemeSwitcher.svelte';
+
+	interface Props {
+		data: LayoutData;
+		children: Snippet<[]>;
+	}
+
+	const { children, data }: Props = $props();
 
 	let openDrawer = $state(false);
+
+	const themeState = setThemeContext(data.theme);
+
+	console.log(themeState);
+
+	afterNavigate(() => {
+		openDrawer = false;
+	});
 </script>
 
 <svelte:head>
@@ -20,16 +44,39 @@
 		<img src="/images/logo.png" alt="Shindra David" />
 	</a>
 
-	<nav class="header__nav">
+	<nav class="header__desktop-nav">
 		<NavLink href="/" name="Home" />
 		<NavLink href="/about-me" name="About me" />
-		<NavLink href="/what-i-do" name="What I do" />
-		<NavLink href="/my-work" name="My work" />
+		<!-- <NavLink href="/what-i-do" name="What I do" /> -->
+		<!-- <NavLink href="/my-work" name="My work" /> -->
 		<NavLink href="/blog" name="Blog" />
 	</nav>
 
 	<a href="/lets-connect" class="header__cta btn primary w-fit-content">Let's connect</a>
+
+	<button
+		class="header__burger"
+		aria-label="Open navigation menu"
+		onclick={() => (openDrawer = !openDrawer)}
+	>
+		<i class="ri-menu-line"></i>
+	</button>
 </header>
+
+<nav
+	class="mobile-nav"
+	class:open={openDrawer}
+	use:detectClickOutside
+	onclickOutside={() => (openDrawer = false)}
+>
+	<NavLink href="/" name="Home" />
+	<NavLink href="/about-me" name="About me" />
+	<!-- <NavLink href="/what-i-do" name="What I do" /> -->
+	<!-- <NavLink href="/my-work" name="My work" /> -->
+	<NavLink href="/blog" name="Blog" />
+
+	<ThemeSwitcher />
+</nav>
 
 <div class="main">
 	{@render children()}
@@ -45,6 +92,8 @@
 			Shindra David
 		</a>
 	</p>
+
+	<ThemeSwitcher />
 </footer>
 
 <style lang="scss">
@@ -62,7 +111,7 @@
 		transform: translate(-50%, 0);
 		background-color: var(--clr-bg-primary-alpha);
 		backdrop-filter: blur(4px);
-		width: 80vw;
+		width: 86vw;
 		border-radius: 280px;
 		box-shadow: var(--shadow-md);
 		border: 1px solid #ffffff;
@@ -75,23 +124,76 @@
 			}
 		}
 
-		&__nav {
-			display: flex;
+		&__desktop-nav {
+			display: none;
+			flex-direction: column;
+			align-items: center;
 			gap: var(--spacing-lg);
+			position: absolute;
+			top: calc(var(--header-height) + var(--spacing-sm));
+			left: 50%;
+			transform: translate(-50%, 0);
+			width: 80vw;
+			background-color: var(--clr-bg-primary-alpha);
+			backdrop-filter: blur(4px);
+			padding: var(--spacing-lg) 0;
 		}
 
 		&__cta {
 			border-radius: 64px;
+			display: none;
+		}
+
+		&__burger {
+			height: 48px;
+			width: 48px;
+			border-radius: 50%;
+			border: 1px solid #ffffff;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+	}
+
+	.mobile-nav {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: var(--spacing-lg);
+		position: fixed;
+		top: calc(var(--header-height) + var(--spacing-md));
+		left: 50%;
+		transform: translate(-50%, 0);
+		width: 86vw;
+		background-color: var(--clr-bg-primary-alpha);
+		backdrop-filter: blur(4px);
+		padding: var(--spacing-lg) 0;
+		border-radius: 28px;
+		border: 1px solid #ffffff;
+
+		/* Transition effect */
+		max-height: 0;
+		overflow: hidden;
+		opacity: 0;
+		transition:
+			max-height 0.4s ease-in-out,
+			opacity 0.3s ease-in-out;
+
+		&.open {
+			max-height: 300px;
+			opacity: 1;
 		}
 	}
 
 	.main {
 		margin-top: calc(var(--header-height) + var(--spacing-lg));
+		@include utils.add-section-lr-padding();
 	}
 
 	.footer {
 		text-align: center;
 		display: flex;
+		align-items: center;
 		flex-direction: column;
 		gap: var(--spacing-xs);
 		margin: var(--spacing-lg) 0 0 0;

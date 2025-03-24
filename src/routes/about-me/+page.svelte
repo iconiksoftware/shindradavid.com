@@ -89,16 +89,16 @@
 </script>
 
 <main>
-	<h1>About me</h1>
+	<header class="page-header">
+		<h1>About me</h1>
 
-	<section>
 		<p>
 			Hi there, I’m Shindra David, a self-taught full-stack developer based in Uganda with a passion
 			for creating dynamic web and mobile applications.
 		</p>
-	</section>
+	</header>
 
-	<section>
+	<section class="my-journey">
 		<h2>My Journey into Coding</h2>
 		<p>
 			I do not have technical background, my journey into programming began unexpectedly. I was in
@@ -125,12 +125,12 @@
 			wanted to expand my skills into mobile app development.
 		</p>
 
-		<p>
+		<!-- <p>
 			Alongside my development journey, I’ve also ventured into the world of design. I began
 			learning Figma, and over time, I’ve developed the skills to create flyers and other digital
 			materials. I’m excited to explore UI design in the future and create beautiful, functional
 			user interfaces that enhance user experience.
-		</p>
+		</p> -->
 
 		<p>
 			This journey started at the end of 2020, during the COVID-19 lockdown. With plenty of free
@@ -175,69 +175,82 @@
 
 <style lang="scss">
 	main {
-		padding: 32px;
-	}
+		section > p {
+			margin-bottom: var(--spacing-lg);
+		}
 
-	section > p {
-		margin-bottom: var(--spacing-lg);
-	}
+		.page-header {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			padding: var(--spacing-lg) 0;
 
-	.skills {
-		&__container {
-			display: grid;
-			grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-			gap: var(--spacing-md);
+			p {
+				text-align: center;
+			}
+		}
 
-			.skill {
-				padding: var(--spacing-xl);
-				background-color: var(--clr-bg-secondary);
-				border-radius: var(--radius-base);
+		.skills {
+			&__header {
+				padding-bottom: var(--spacing-md);
+			}
 
-				&__header {
-					display: flex;
-					align-items: center;
-					gap: var(--spacing-sm);
-					margin-bottom: var(--spacing-md);
+			&__container {
+				display: grid;
+				grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+				gap: var(--spacing-md);
 
-					.icon {
-						display: flex;
-						align-items: center;
-						justify-content: center;
-						padding: var(--spacing-sm);
-						border-radius: var(--radius-sm);
-						background-color: #414141;
-						font-size: 32px;
-						height: fit-content;
-					}
+				.skill {
+					padding: var(--spacing-xl);
+					background-color: var(--clr-bg-secondary);
+					border-radius: var(--radius-base);
 
-					.name {
-						font-size: var(--fs-base);
-					}
-				}
-
-				&__sub_skills {
-					display: flex;
-					flex-direction: row;
-					flex-wrap: wrap;
-					gap: var(--spacing-sm);
-
-					.sub_skill {
-						padding: var(--spacing-xs) var(--spacing-md);
+					&__header {
 						display: flex;
 						align-items: center;
 						gap: var(--spacing-sm);
-						border: 1px solid #646464ff;
-						border-radius: 32px;
-						width: fit-content;
+						margin-bottom: var(--spacing-md);
 
 						.icon {
-							line-height: 1;
-							font-size: 18px;
+							display: flex;
+							align-items: center;
+							justify-content: center;
+							padding: var(--spacing-sm);
+							border-radius: var(--radius-sm);
+							background-color: #414141;
+							font-size: 32px;
+							height: fit-content;
 						}
 
 						.name {
-							font-size: var(--fs-sm);
-							font-weight: var(--fw-semibold);
+							font-size: var(--fs-base);
+						}
+					}
+
+					&__sub_skills {
+						display: flex;
+						flex-direction: row;
+						flex-wrap: wrap;
+						gap: var(--spacing-sm);
+
+						.sub_skill {
+							padding: var(--spacing-xs) var(--spacing-md);
+							display: flex;
+							align-items: center;
+							gap: var(--spacing-sm);
+							border: 1px solid #646464ff;
+							border-radius: 32px;
+							width: fit-content;
+
+							.icon {
+								line-height: 1;
+								font-size: 18px;
+							}
+
+							.name {
+								font-size: var(--fs-sm);
+								font-weight: var(--fw-semibold);
+							}
 						}
 					}
 				}

@@ -3,8 +3,6 @@
 
 	import { PostCard } from '$lib/components';
 
-	import { setTheme } from '$lib/utils';
-
 	interface Props {
 		data: PageData;
 	}
@@ -16,10 +14,6 @@
 
 <main>
 	<h1>Home</h1>
-
-	<button onclick={() => setTheme('dark')}>Dark</button>
-	<button onclick={() => setTheme('light')}>Light</button>
-	<button onclick={() => setTheme('system')}>System</button>
 
 	<section class="posts">
 		<header class="posts__header">
