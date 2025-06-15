@@ -61,7 +61,7 @@
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		padding: var(--spacing-lg);
+		padding: var(--spacing-sm);
 		background-color: var(--clr-bg-primary);
 		color: var(--clr-txt-primary-on-bg-primary);
 		min-height: 80vh;
