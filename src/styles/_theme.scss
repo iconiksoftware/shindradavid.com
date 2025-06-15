@@ -12,85 +12,85 @@
 	--clr-accent: #be1e2d;
 	--clr-bg-accent: #be1e2d;
 	--clr-txt-primary-on-bg-accent: #fafafa;
+
 	// bg primary
 	--clr-bg-primary: hsl(0, 0%, 9%);
-	--clr-bg-primary-alpha: hsla(0, 0%, 7%, 60%);
+	--clr-bg-primary-alpha: hsla(0, 0%, 7%, 0.6);
 	--clr-txt-primary-on-bg-primary: hsl(0, 0%, 100%);
 	--clr-txt-secondary-on-bg-primary: hsl(0, 0%, 90%);
 	--clr-txt-tertiary-on-bg-primary: hsl(0, 0%, 80%);
-	--clr-txt-error-on-bg-primary: ;
-	--clr-txt-success-on-bg-primary: ;
-	--clr-txt-warning-on-bg-primary: ;
-	--clr-txt-info-on-bg-primary: ;
-	--clr-outline-primary-on-bg-primary: ;
-	--clr-outline-secondary-on-bg-primary: hsl(0, 0%, 22%);
-	--clr-outline-tertiary-on-bg-primary: ;
+	--clr-txt-error-on-bg-primary: var(--clr-error);
+	--clr-txt-success-on-bg-primary: var(--clr-ok);
+	--clr-txt-warning-on-bg-primary: var(--clr-warning);
+	--clr-txt-info-on-bg-primary: var(--clr-info);
+	--clr-outline-primary-on-bg-primary: hsl(0, 0%, 88%);
+	--clr-outline-secondary-on-bg-primary: hsl(0, 0%, 66%);
+	--clr-outline-tertiary-on-bg-primary: hsl(0, 0%, 44%);
+
 	// bg secondary
 	--clr-bg-secondary: hsl(0, 0%, 14%);
-	--clr-txt-primary-on-bg-secondary: ;
-	--clr-txt-secondary-on-bg-secondary: ;
-	--clr-txt-tertiary-on-bg-secondary: ;
-	--clr-txt-error-on-bg-secondary: ;
-	--clr-txt-success-on-bg-secondary: ;
-	--clr-txt-warning-on-bg-secondary: ;
-	--clr-txt-info-on-bg-secondary: ;
-	--clr-divider-primary-on-bg-secondary: ;
-	--clr-divider-secondary-on-bg-secondary: ;
-	--clr-divider-tertiary-on-bg-secondary: ;
+	--clr-txt-primary-on-bg-secondary: hsl(0, 0%, 100%);
+	--clr-txt-secondary-on-bg-secondary: hsl(0, 0%, 90%);
+	--clr-txt-tertiary-on-bg-secondary: hsl(0, 0%, 80%);
+	--clr-txt-error-on-bg-secondary: var(--clr-error);
+	--clr-txt-success-on-bg-secondary: var(--clr-ok);
+	--clr-txt-warning-on-bg-secondary: var(--clr-warning);
+	--clr-txt-info-on-bg-secondary: var(--clr-info);
+	--clr-divider-primary-on-bg-secondary: hsl(0, 0%, 30%);
+	--clr-divider-secondary-on-bg-secondary: hsl(0, 0%, 25%);
+	--clr-divider-tertiary-on-bg-secondary: hsl(0, 0%, 20%);
+
 	// bg tertiary
-	--clr-bg-tertiary: ;
-	--clr-txt-primary-on-bg-tertiary: ;
-	--clr-txt-secondary-on-bg-tertiary: ;
-	--clr-txt-tertiary-on-bg-tertiary: ;
-	--clr-txt-error-on-bg-tertiary: ;
-	--clr-txt-success-on-bg-tertiary: ;
-	--clr-txt-warning-on-bg-tertiary: ;
-	--clr-txt-info-on-bg-tertiary: ;
-	--clr-divider-primary-on-bg-tertiary: ;
-	--clr-divider-secondary-on-bg-tertiary: ;
-	--clr-divider-tertiary-on-bg-tertiary: ;
+	--clr-bg-tertiary: hsl(0, 0%, 18%);
+	--clr-txt-primary-on-bg-tertiary: hsl(0, 0%, 100%);
+	--clr-txt-secondary-on-bg-tertiary: hsl(0, 0%, 90%);
+	--clr-txt-tertiary-on-bg-tertiary: hsl(0, 0%, 80%);
+	--clr-txt-error-on-bg-tertiary: var(--clr-error);
+	--clr-txt-success-on-bg-tertiary: var(--clr-ok);
+	--clr-txt-warning-on-bg-tertiary: var(--clr-warning);
+	--clr-txt-info-on-bg-tertiary: var(--clr-info);
+	--clr-divider-primary-on-bg-tertiary: hsl(0, 0%, 28%);
+	--clr-divider-secondary-on-bg-tertiary: hsl(0, 0%, 24%);
+	--clr-divider-tertiary-on-bg-tertiary: hsl(0, 0%, 20%);
+
 	// bg button
 	--clr-btn-bg-primary: var(--clr-accent-1);
 	--clr-txt-primary-on-btn-bg-primary: var(--clr-txt-primary-on-bg-accent-1);
-	--clr-txt-secondary-on-btn-bg-primary: ;
-	--clr-btn-bg-secondary: ;
-	--clr-txt-primary-on-btn-bg-secondary: ;
-	--clr-txt-secondary-on-btn-bg-secondary: ;
+	--clr-txt-secondary-on-btn-bg-primary: hsl(0, 0%, 40%);
+	--clr-btn-bg-secondary: hsl(0, 0%, 22%);
+	--clr-txt-primary-on-btn-bg-secondary: hsl(0, 0%, 100%);
+	--clr-txt-secondary-on-btn-bg-secondary: hsl(0, 0%, 70%);
+
 	// bg error
-	--clr-bg-error: ;
-	--clr-txt-primary-on-bg-error: ;
-	--clr-txt-secondary-on-bg-error: ;
-	--clr-txt-tertiary-on-bg-error: ;
-	--clr-divider-primary-on-bg-error: ;
-	--clr-divider-secondary-on-bg-error: ;
-	--clr-divider-tertiary-on-bg-error: ;
+	--clr-bg-error: hsla(0, 86%, 44%, 0.15);
+	--clr-txt-primary-on-bg-error: var(--clr-error);
+	--clr-txt-secondary-on-bg-error: hsl(0, 86%, 80%);
+	--clr-txt-tertiary-on-bg-error: hsl(0, 86%, 70%);
+	--clr-divider-primary-on-bg-error: var(--clr-error);
+	--clr-divider-secondary-on-bg-error: hsl(0, 86%, 35%);
+	--clr-divider-tertiary-on-bg-error: hsl(0, 86%, 30%);
+
 	// bg success
-	--clr-bg-success: ;
-	--clr-txt-primary-on-bg-success: ;
-	--clr-txt-secondary-on-bg-success: ;
-	--clr-txt-tertiary-on-bg-success: ;
-	--clr-divider-primary-on-bg-success: ;
-	--clr-divider-secondary-on-bg-success: ;
-	--clr-divider-tertiary-on-bg-success: ;
-	// bg warning
-	--clr-bg-warning: ;
-	--clr-txt-primary-on-bg-warning: ;
-	--clr-txt-secondary-on-bg-warning: ;
-	--clr-txt-tertiary-on-bg-warning: ;
-	--clr-divider-primary-on-bg-warning: ;
-	--clr-divider-secondary-on-bg-warning: ;
-	--clr-divider-tertiary-on-bg-warning: ;
+	--clr-bg-success: hsla(142, 72%, 29%, 0.15);
+	--clr-txt-primary-on-bg-success: var(--clr-ok);
+	--clr-txt-secondary-on-bg-success: hsl(142, 72%, 70%);
+	--clr-txt-tertiary-on-bg-success: hsl(142, 72%, 60%);
+	--clr-divider-primary-on-bg-success: var(--clr-ok);
+	--clr-divider-secondary-on-bg-success: hsl(142, 72%, 25%);
+	--clr-divider-tertiary-on-bg-success: hsl(142, 72%, 20%);
+
 	// bg info
-	--clr-bg-info: ;
-	--clr-txt-primary-on-bg-info: ;
-	--clr-txt-secondary-on-bg-info: ;
-	--clr-txt-tertiary-on-bg-info: ;
-	--clr-divider-primary-on-bg-warning: ;
-	--clr-divider-secondary-on-bg-warning: ;
-	--clr-divider-tertiary-on-bg-warning: ;
+	--clr-bg-info: hsla(221, 83%, 53%, 0.15);
+	--clr-txt-primary-on-bg-info: var(--clr-info);
+	--clr-txt-secondary-on-bg-info: hsl(221, 83%, 80%);
+	--clr-txt-tertiary-on-bg-info: hsl(221, 83%, 70%);
+	--clr-divider-primary-on-bg-info: var(--clr-info);
+	--clr-divider-secondary-on-bg-info: hsl(221, 83%, 45%);
+	--clr-divider-tertiary-on-bg-info: hsl(221, 83%, 40%);
+
 	// shadow color
-	--clr-shadow: ;
-	--clr-accent-shadow: ;
+	--clr-shadow: hsla(0, 0%, 0%, 0.4);
+	--clr-accent-shadow: hsla(40, 97%, 54%, 0.4);
 }
 
 @mixin light-theme {
@@ -104,84 +104,84 @@
 	--clr-accent: #be1e2d;
 	--clr-bg-accent: #be1e2d;
 	--clr-txt-primary-on-bg-accent: #fafafa;
+
 	// bg primary
 	--clr-bg-primary: #fff;
 	--clr-txt-primary-on-bg-primary: hsl(240, 8%, 9%);
-	--clr-txt-secondary-on-bg-primary: ;
-	--clr-txt-tertiary-on-bg-primary: ;
-	--clr-txt-error-on-bg-primary: ;
-	--clr-txt-success-on-bg-primary: ;
-	--clr-txt-warning-on-bg-primary: ;
-	--clr-txt-info-on-bg-primary: ;
-	--clr-outline-primary-on-bg-primary: ;
+	--clr-txt-secondary-on-bg-primary: hsl(240, 8%, 30%);
+	--clr-txt-tertiary-on-bg-primary: hsl(240, 8%, 50%);
+	--clr-txt-error-on-bg-primary: var(--clr-error);
+	--clr-txt-success-on-bg-primary: var(--clr-ok);
+	--clr-txt-warning-on-bg-primary: var(--clr-warning);
+	--clr-txt-info-on-bg-primary: var(--clr-info);
+	--clr-outline-primary-on-bg-primary: hsl(0, 0%, 0%);
 	--clr-outline-secondary-on-bg-primary: hsl(0, 0%, 10%);
-	--clr-outline-tertiary-on-bg-primary: ;
+	--clr-outline-tertiary-on-bg-primary: hsl(0, 0%, 20%);
+
 	// bg secondary
-	--clr-bg-secondary: ;
-	--clr-txt-primary-on-bg-secondary: ;
-	--clr-txt-secondary-on-bg-secondary: ;
-	--clr-txt-tertiary-on-bg-secondary: ;
-	--clr-txt-error-on-bg-secondary: ;
-	--clr-txt-success-on-bg-secondary: ;
-	--clr-txt-warning-on-bg-secondary: ;
-	--clr-txt-info-on-bg-secondary: ;
-	--clr-divider-primary-on-bg-secondary: ;
-	--clr-divider-secondary-on-bg-secondary: ;
-	--clr-divider-tertiary-on-bg-secondary: ;
+	--clr-bg-secondary: hsl(0, 0%, 97%);
+	--clr-txt-primary-on-bg-secondary: hsl(240, 8%, 9%);
+	--clr-txt-secondary-on-bg-secondary: hsl(240, 8%, 30%);
+	--clr-txt-tertiary-on-bg-secondary: hsl(240, 8%, 50%);
+	--clr-txt-error-on-bg-secondary: var(--clr-error);
+	--clr-txt-success-on-bg-secondary: var(--clr-ok);
+	--clr-txt-warning-on-bg-secondary: var(--clr-warning);
+	--clr-txt-info-on-bg-secondary: var(--clr-info);
+	--clr-divider-primary-on-bg-secondary: hsl(0, 0%, 80%);
+	--clr-divider-secondary-on-bg-secondary: hsl(0, 0%, 70%);
+	--clr-divider-tertiary-on-bg-secondary: hsl(0, 0%, 60%);
+
 	// bg tertiary
-	--clr-bg-tertiary: ;
-	--clr-txt-primary-on-bg-tertiary: ;
-	--clr-txt-secondary-on-bg-tertiary: ;
-	--clr-txt-tertiary-on-bg-tertiary: ;
-	--clr-txt-error-on-bg-tertiary: ;
-	--clr-txt-success-on-bg-tertiary: ;
-	--clr-txt-warning-on-bg-tertiary: ;
-	--clr-txt-info-on-bg-tertiary: ;
-	--clr-divider-primary-on-bg-tertiary: ;
-	--clr-divider-secondary-on-bg-tertiary: ;
-	--clr-divider-tertiary-on-bg-tertiary: ;
+	--clr-bg-tertiary: hsl(0, 0%, 92%);
+	--clr-txt-primary-on-bg-tertiary: hsl(240, 8%, 9%);
+	--clr-txt-secondary-on-bg-tertiary: hsl(240, 8%, 30%);
+	--clr-txt-tertiary-on-bg-tertiary: hsl(240, 8%, 50%);
+	--clr-txt-error-on-bg-tertiary: var(--clr-error);
+	--clr-txt-success-on-bg-tertiary: var(--clr-ok);
+	--clr-txt-warning-on-bg-tertiary: var(--clr-warning);
+	--clr-txt-info-on-bg-tertiary: var(--clr-info);
+	--clr-divider-primary-on-bg-tertiary: hsl(0, 0%, 75%);
+	--clr-divider-secondary-on-bg-tertiary: hsl(0, 0%, 65%);
+	--clr-divider-tertiary-on-bg-tertiary: hsl(0, 0%, 55%);
+
 	// bg button
-	--clr-btn-bg-primary: ;
-	--clr-txt-primary-on-btn-bg-primary: ;
-	--clr-txt-secondary-on-btn-bg-primary: ;
-	--clr-btn-bg-secondary: ;
-	--clr-txt-primary-on-btn-bg-secondary: ;
-	--clr-txt-secondary-on-btn-bg-secondary: ;
+	--clr-btn-bg-primary: var(--clr-accent-1);
+	--clr-txt-primary-on-btn-bg-primary: hsl(210, 11%, 11%);
+	--clr-txt-secondary-on-btn-bg-primary: hsl(0, 0%, 30%);
+	--clr-btn-bg-secondary: hsl(0, 0%, 85%);
+	--clr-txt-primary-on-btn-bg-secondary: hsl(240, 8%, 9%);
+	--clr-txt-secondary-on-btn-bg-secondary: hsl(0, 0%, 50%);
+
 	// bg error
-	--clr-bg-error: ;
-	--clr-txt-primary-on-bg-error: ;
-	--clr-txt-secondary-on-bg-error: ;
-	--clr-txt-tertiary-on-bg-error: ;
-	--clr-divider-primary-on-bg-error: ;
-	--clr-divider-secondary-on-bg-error: ;
-	--clr-divider-tertiary-on-bg-error: ;
+	--clr-bg-error: hsla(0, 86%, 44%, 0.15);
+	--clr-txt-primary-on-bg-error: var(--clr-error);
+	--clr-txt-secondary-on-bg-error: hsl(0, 86%, 35%);
+	--clr-txt-tertiary-on-bg-error: hsl(0, 86%, 25%);
+	--clr-divider-primary-on-bg-error: var(--clr-error);
+	--clr-divider-secondary-on-bg-error: hsl(0, 86%, 35%);
+	--clr-divider-tertiary-on-bg-error: hsl(0, 86%, 30%);
+
 	// bg success
-	--clr-bg-success: ;
-	--clr-txt-primary-on-bg-success: ;
-	--clr-txt-secondary-on-bg-success: ;
-	--clr-txt-tertiary-on-bg-success: ;
-	--clr-divider-primary-on-bg-success: ;
-	--clr-divider-secondary-on-bg-success: ;
-	--clr-divider-tertiary-on-bg-success: ;
-	// bg warning
-	--clr-bg-warning: ;
-	--clr-txt-primary-on-bg-warning: ;
-	--clr-txt-secondary-on-bg-warning: ;
-	--clr-txt-tertiary-on-bg-warning: ;
-	--clr-divider-primary-on-bg-warning: ;
-	--clr-divider-secondary-on-bg-warning: ;
-	--clr-divider-tertiary-on-bg-warning: ;
+	--clr-bg-success: hsla(142, 72%, 29%, 0.15);
+	--clr-txt-primary-on-bg-success: var(--clr-ok);
+	--clr-txt-secondary-on-bg-success: hsl(142, 72%, 40%);
+	--clr-txt-tertiary-on-bg-success: hsl(142, 72%, 30%);
+	--clr-divider-primary-on-bg-success: var(--clr-ok);
+	--clr-divider-secondary-on-bg-success: hsl(142, 72%, 25%);
+	--clr-divider-tertiary-on-bg-success: hsl(142, 72%, 20%);
+
 	// bg info
-	--clr-bg-info: ;
-	--clr-txt-primary-on-bg-info: ;
-	--clr-txt-secondary-on-bg-info: ;
-	--clr-txt-tertiary-on-bg-info: ;
-	--clr-divider-primary-on-bg-warning: ;
-	--clr-divider-secondary-on-bg-warning: ;
-	--clr-divider-tertiary-on-bg-warning: ;
+	--clr-bg-info: hsla(221, 83%, 53%, 0.15);
+	--clr-txt-primary-on-bg-info: var(--clr-info);
+	--clr-txt-secondary-on-bg-info: hsl(221, 83%, 40%);
+	--clr-txt-tertiary-on-bg-info: hsl(221, 83%, 30%);
+	--clr-divider-primary-on-bg-info: var(--clr-info);
+	--clr-divider-secondary-on-bg-info: hsl(221, 83%, 45%);
+	--clr-divider-tertiary-on-bg-info: hsl(221, 83%, 40%);
+
 	// shadow color
-	--clr-shadow: ;
-	--clr-accent-shadow: ;
+	--clr-shadow: hsla(0, 0%, 0%, 0.08);
+	--clr-accent-shadow: hsla(40, 97%, 54%, 0.25);
 }
 
 body[data-theme='system'] {

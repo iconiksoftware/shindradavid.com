@@ -75,6 +75,8 @@
 	<!-- <NavLink href="/my-work" name="My work" /> -->
 	<NavLink href="/blog" name="Blog" />
 
+	<a href="/lets-connect" class="mobile-nav__cta btn primary w-fit-content"> Let's connect </a>
+
 	<ThemeSwitcher />
 </nav>
 
@@ -114,7 +116,7 @@
 		width: 86vw;
 		border-radius: 280px;
 		box-shadow: var(--shadow-md);
-		border: 1px solid #ffffff;
+		border: 1px solid var(--clr-outline-primary-on-bg-primary);
 
 		@include utils.respond-to('lg-screens') {
 			width: 72vw;
@@ -130,6 +132,12 @@
 
 		&__desktop-nav {
 			display: none;
+
+			&-cta {
+				@include utils.respond-to('lg-screens') {
+					display: none;
+				}
+			}
 
 			@include utils.respond-to('lg-screens') {
 				display: flex;
@@ -152,7 +160,7 @@
 			height: 48px;
 			width: 48px;
 			border-radius: 50%;
-			border: 1px solid #ffffff;
+			border: 1px solid var(--clr-outline-primary-on-bg-primary);
 			display: flex;
 			align-items: center;
 			justify-content: center;
@@ -177,7 +185,7 @@
 		backdrop-filter: blur(4px);
 		padding: var(--spacing-lg) 0;
 		border-radius: 28px;
-		border: 1px solid #ffffff;
+		border: 1px solid var(--clr-outline-primary-on-bg-primary);
 
 		/* Transition effect */
 		max-height: 0;

@@ -58,7 +58,7 @@
 			}
 
 			&__title {
-				font-size: var(--fs-md);
+				font-size: var(--fs-lg);
 			}
 
 			&__description {
