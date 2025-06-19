@@ -6,6 +6,7 @@
 		"dev": "vite dev",
 		"build": "vite build",
 		"preview": "vite preview",
+		"start": "HOST=127.0.0.1 PORT=4015 ORIGIN=https://shindradavid.com node build",
 		"test": "npm run test:integration && npm run test:unit",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
@@ -16,23 +17,20 @@
 	},
 	"devDependencies": {
 		"@jsdevtools/rehype-toc": "^3.0.2",
-		"@playwright/test": "^1.53.0",
+		"@playwright/test": "^1.53.1",
 		"@shikijs/rehype": "^1.29.2",
 		"@sveltejs/adapter-auto": "^3.3.1",
 		"@sveltejs/adapter-node": "^4.0.1",
-		"@sveltejs/adapter-vercel": "^5.7.2",
 		"@sveltejs/enhanced-img": "^0.2.1",
 		"@sveltejs/kit": "^2.21.5",
-		"@sveltejs/vite-plugin-svelte": "^3.1.2",
+		"@sveltejs/vite-plugin-svelte": "^4.0.4",
 		"@types/eslint": "8.56.0",
 		"@types/fs-extra": "^11.0.4",
 		"@types/js-cookie": "^3.0.6",
-		"@types/node": "^20.19.0",
+		"@types/node": "^20.19.1",
 		"@types/rss": "^0.0.32",
 		"@typescript-eslint/eslint-plugin": "^6.21.0",
 		"@typescript-eslint/parser": "^6.21.0",
-		"@vercel/analytics": "^1.5.0",
-		"@vercel/speed-insights": "^1.2.0",
 		"date-fns": "^3.6.0",
 		"eslint": "^8.57.1",
 		"eslint-config-prettier": "^9.1.0",
@@ -58,7 +56,7 @@
 		"rss": "^1.2.2",
 		"sass": "^1.89.2",
 		"shiki": "^1.29.2",
-		"svelte": "^5.34.3",
+		"svelte": "^5.34.7",
 		"svelte-check": "^3.8.6",
 		"svelte-french-toast": "^1.2.0",
 		"svelte-markdown": "^0.4.1",
@@ -73,5 +71,8 @@
 		"vitest": "^1.6.1"
 	},
 	"type": "module",
-	"packageManager": "pnpm@10.9.0+sha512.0486e394640d3c1fb3c9d43d49cf92879ff74f8516959c235308f5a8f62e2e19528a65cdc2a3058f587cde71eba3d5b56327c8c33a97e4c4051ca48a10ca2d5f"
+	"packageManager": "pnpm@10.9.0+sha512.0486e394640d3c1fb3c9d43d49cf92879ff74f8516959c235308f5a8f62e2e19528a65cdc2a3058f587cde71eba3d5b56327c8c33a97e4c4051ca48a10ca2d5f",
+	"dependencies": {
+		"dotenv": "^16.5.0"
+	}
 }

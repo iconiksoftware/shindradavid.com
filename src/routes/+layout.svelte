@@ -25,8 +25,6 @@
 
 	const themeState = setThemeContext(data.theme);
 
-	console.log(themeState);
-
 	afterNavigate(() => {
 		openDrawer = false;
 	});
