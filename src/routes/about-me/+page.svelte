@@ -93,8 +93,8 @@
 		<h1>About me</h1>
 
 		<p>
-			Hi there, I’m Shindra David, a self-taught full-stack developer based in Uganda with a passion
-			for creating dynamic web and mobile applications.
+			Hi there, I’m Shindra David, a self-taught full-stack developer and graphic designer based in
+			Uganda with a passion for creating dynamic web and mobile applications.
 		</p>
 	</header>
 
@@ -125,12 +125,12 @@
 			wanted to expand my skills into mobile app development.
 		</p>
 
-		<!-- <p>
+		<p>
 			Alongside my development journey, I’ve also ventured into the world of design. I began
 			learning Figma, and over time, I’ve developed the skills to create flyers and other digital
 			materials. I’m excited to explore UI design in the future and create beautiful, functional
 			user interfaces that enhance user experience.
-		</p> -->
+		</p>
 
 		<p>
 			This journey started at the end of 2020, during the COVID-19 lockdown. With plenty of free

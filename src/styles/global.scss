@@ -23,6 +23,7 @@
 	padding-bottom: 56.25%; /* Maintain a 16x9 aspect ratio (16/9 = 1.7778 or 56.25%) */
 	position: relative; /* Position relative for absolute positioning of img */
 	overflow: hidden; /* Hide any overflow content from the image */
+	z-index: 10;
 
 	img {
 		position: absolute; /* Position the image absolutely within the container */

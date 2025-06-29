@@ -46,7 +46,7 @@
 		<NavLink href="/" name="Home" />
 		<NavLink href="/about-me" name="About me" />
 		<!-- <NavLink href="/what-i-do" name="What I do" /> -->
-		<!-- <NavLink href="/my-work" name="My work" /> -->
+		<NavLink href="/my-work" name="My work" />
 		<NavLink href="/blog" name="Blog" />
 	</nav>
 
@@ -70,7 +70,7 @@
 	<NavLink href="/" name="Home" />
 	<NavLink href="/about-me" name="About me" />
 	<!-- <NavLink href="/what-i-do" name="What I do" /> -->
-	<!-- <NavLink href="/my-work" name="My work" /> -->
+	<NavLink href="/my-work" name="My work" />
 	<NavLink href="/blog" name="Blog" />
 
 	<a href="/lets-connect" class="mobile-nav__cta btn primary w-fit-content"> Let's connect </a>
@@ -106,6 +106,7 @@
 		height: var(--header-height);
 		padding: var(--spacing-sm);
 		position: fixed;
+		z-index: utils.z('header', 'base');
 		top: var(--spacing-sm);
 		left: 50%;
 		transform: translate(-50%, 0);
@@ -175,6 +176,7 @@
 		align-items: center;
 		gap: var(--spacing-lg);
 		position: fixed;
+		z-index: utils.z('header', 'nav');
 		top: calc(var(--header-height) + var(--spacing-md));
 		left: 50%;
 		transform: translate(-50%, 0);
@@ -198,7 +200,7 @@
 		}
 
 		&.open {
-			max-height: 300px;
+			max-height: 380px;
 			opacity: 1;
 		}
 	}

@@ -6,9 +6,11 @@
 
 <a href="/blog/{post.slug}">
 	<article class="post">
-		<img class="post__thumbnail" src={post.thumbnailUrl} alt={post.title} />
+		<div class="aspect-ratio-16x9">
+			<img class="post__thumbnail" src={post.thumbnailUrl} alt={post.title} />
+		</div>
 
-		<div>
+		<div class="details">
 			<ul class="post__tags">
 				{#each post.tags as tag}
 					<li class="tag tag-{tag}">{tag}</li>
@@ -34,7 +36,7 @@
 				box-shadow: var(--shadow-sm);
 			}
 
-			div {
+			.details {
 				padding: var(--spacing-lg);
 			}
 
