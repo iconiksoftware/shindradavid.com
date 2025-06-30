@@ -9,7 +9,7 @@
 
 	let { data }: Props = $props();
 
-	const { posts } = data;
+	const { posts, projects } = data;
 </script>
 
 <main>

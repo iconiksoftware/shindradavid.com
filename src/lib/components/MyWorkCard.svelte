@@ -5,11 +5,11 @@
 </script>
 
 <!-- The main container for a single project card -->
-<a href={project.link} class="project-card-link">
+<a href="/my-work/{project.slug}" class="project-card-link">
 	<article class="project-card">
 		<!-- Project Image -->
 		<div class="aspect-ratio-16x9">
-			<img src={project.image} alt={project.title} class="project-image" />
+			<img src={project.thumbnailUrl} alt={project.title} class="project-image" />
 		</div>
 
 		<div class="project-content">
@@ -65,7 +65,7 @@
 				color: var(--clr-txt-primary-on-bg-secondary); // Default text color for content
 
 				.project-title {
-					font-size: var(--fs-lg); // Large font size for project title
+					font-size: var(--fs-md); // Large font size for project title
 					color: var(--clr-txt-primary-on-bg-secondary); // Primary text color for title
 					margin-top: 0; // Remove default top margin
 					margin-bottom: var(--spacing-sm); // Space below title

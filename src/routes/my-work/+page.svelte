@@ -1,80 +1,26 @@
 <script lang="ts">
 	import MyWorkCard from '$lib/components/MyWorkCard.svelte';
-	import type { Project } from '$lib/types';
 
-	const projects: Project[] = [
-		{
-			id: 1,
-			title: 'NGO Master: An NGO Management System',
-			description:
-				'Spearheaded the migration of a critical business management system from Firebase to a self-hosted VPS, significantly reducing operational costs and enhancing flexibility.',
-			category: 'software',
-			technologies: ['PostgreSQL', 'Express.js', 'React', 'React Native'],
-			image: '/images/my-work/ngo-master-thumbnail.png',
-			link: '#' // Replace with actual project link
-		},
-		{
-			id: 2,
-			title: 'Prisha Charity Foundation Management System',
-			description:
-				'Crafted a comprehensive brand identity for a local startup, including logo, color palette, typography, and marketing collateral.',
-			category: 'design',
-			technologies: ['PostgreSQL', 'Express.js', 'React', 'React Native'],
-			image: '/images/my-work/prisha-charity-foundation-thumbnail.png',
-			link: '#' // Replace with actual project link
-		},
-		{
-			id: 3,
-			title: 'Prisha Charity Foundation Website',
-			description:
-				'Developed and maintained customer-facing e-commerce platforms using React and React Native, crucial for online sales and customer engagement.',
-			category: 'software',
-			technologies: ['React', 'SCSS'],
-			image: '/images/my-work/prisha-charity-foundation-website.png',
-			link: '#' // Replace with actual project link
-		},
-		{
-			id: 4,
-			title: 'Prisha Charity Foundation ID Card Design',
-			description:
-				'Designed various promotional materials for events and marketing campaigns, ensuring brand consistency and visual appeal.',
-			category: 'design',
-			technologies: ['Figma'],
-			image: '/images/my-work/prisha-charity-foundation-id-cards.png',
-			link: '#' // Replace with actual project link
-		},
-		{
-			id: 5,
-			title: 'Maurice Cakes & Events social media designs',
-			description:
-				'Led the complete UI/UX redesign of an existing mobile application, focusing on improving user flow, accessibility, and visual aesthetics.',
-			category: 'design',
-			technologies: ['Figma'],
-			image: '/images/my-work/maurice-cakes-social-media-designs-thumbnail.png',
-			link: '#' // Replace with actual project link
-		},
-		{
-			id: 6,
-			title: 'Wild Palace Safari Lodge social media designs',
-			description:
-				'Designed and developed a personal portfolio website from scratch, showcasing projects and skills using modern web technologies.',
-			category: 'design',
-			technologies: ['Figma'],
-			image: '/images/my-work/wild-palace-safari-lodge-social-media-designs-thumbnail.png',
-			link: '#' // Replace with actual project link
-		}
-	];
+	import type { PageData } from './$types';
 
-	// Reactive state to manage the active filter category
-	let activeCategory: 'all' | 'software' | 'design' = 'all';
+	interface Props {
+		data: PageData;
+	}
 
-	// Reactive declaration to filter projects based on the active category
-	$: filteredProjects = projects.filter((project) => {
-		if (activeCategory === 'all') {
-			return true; // Show all projects if 'all' is selected
-		}
-		return project.category === activeCategory; // Otherwise, show projects matching the selected category
-	});
+	let { data }: Props = $props();
+
+	const { projects } = data;
+
+	let activeCategory = $state<'all' | 'software' | 'design'>('all');
+
+	let filteredProjects = $derived(
+		projects.filter((project) => {
+			if (activeCategory === 'all') {
+				return true;
+			}
+			return project.category === activeCategory;
+		})
+	);
 </script>
 
 <main class="main work-page">
@@ -89,30 +35,29 @@
 	<section class="filter-section">
 		<button
 			class="button {activeCategory === 'all' ? 'primary' : 'secondary'}"
-			on:click={() => (activeCategory = 'all')}
+			onclick={() => (activeCategory = 'all')}
 		>
 			All
 		</button>
 		<button
 			class="button {activeCategory === 'software' ? 'primary' : 'secondary'}"
-			on:click={() => (activeCategory = 'software')}
+			onclick={() => (activeCategory = 'software')}
 		>
 			Software Development
 		</button>
 		<button
 			class="button {activeCategory === 'design' ? 'primary' : 'secondary'}"
-			on:click={() => (activeCategory = 'design')}
+			onclick={() => (activeCategory = 'design')}
 		>
 			Design
 		</button>
 	</section>
 
 	<section class="projects-grid-section">
-		{#each filteredProjects as project (project.id)}
+		{#each filteredProjects as project (project.slug)}
 			<MyWorkCard {project} />
 		{/each}
 
-		<!-- Message for no projects in a filtered category -->
 		{#if filteredProjects.length === 0}
 			<p class="no-projects-message">
 				No projects found for this category. Please select another filter or check back later!
@@ -122,8 +67,6 @@
 </main>
 
 <style lang="scss">
-	// Import your SASS partials. Adjust paths if necessary based on your project structure.
-	// Example: If your styles are in `src/lib/styles/`, then paths might be `../../lib/styles/breakpoints`.
 	@use 'sass:color';
 	@use '../../styles/utils';
 
@@ -163,48 +106,46 @@
 		flex-wrap: wrap; // Allow buttons to wrap on smaller screens
 
 		.button {
-			padding: var(--spacing-sm) var(--spacing-md); // Padding for buttons
-			font-size: var(--fs-sm); // Small font size for button text
-			border-radius: var(--radius-base); // More rounded corners for a "tab" look
-			transition: background-color var(--animation-speed-fast) var(--animation-fn-ease-in-out); // Smooth transition for background
+			padding: var(--spacing-sm) var(--spacing-md);
+			font-size: var(--fs-sm);
+			font-weight: var(--fw-bold);
+			border-radius: var(--radius-base);
+			transition: background-color var(--animation-speed-fast) var(--animation-fn-ease-in-out);
 
 			&.primary {
-				background-color: var(--clr-btn-bg-primary); // Primary button background
-				color: var(--clr-txt-primary-on-btn-bg-primary); // Primary text color on button
+				background-color: var(--clr-btn-bg-primary);
+				color: var(--clr-txt-primary-on-btn-bg-primary);
 			}
 
 			&.secondary {
-				background-color: var(--clr-bg-secondary); // Secondary button background
-				color: var(--clr-txt-primary-on-bg-secondary); // Primary text color on secondary button
+				background-color: var(--clr-bg-secondary);
+				color: var(--clr-txt-primary-on-bg-secondary);
 			}
 		}
 	}
 
-	// Projects grid section styling
 	.projects-grid-section {
-		display: grid; // Use CSS Grid for project cards
-		grid-template-columns: 1fr; // Default to single column on small screens
-		gap: var(--spacing-xl); // Gap between grid items
-		padding-bottom: var(--spacing-9xl); // Bottom padding for the section
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: var(--spacing-xl);
+		padding-bottom: var(--spacing-9xl);
 
 		@include utils.respond-to('md-screens') {
-			// On medium screens and up, use auto-fit for flexible columns
 			grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-			gap: var(--spacing-md); // Increase gap
+			gap: var(--spacing-md);
 		}
 
 		@include utils.respond-to('lg-screens') {
-			// On large screens and up, adjust minmax for potentially wider cards
 			grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-			gap: var(--spacing-md); // Further increase gap
+			gap: var(--spacing-md);
 		}
 
 		.no-projects-message {
-			grid-column: 1 / -1; // Make the message span all grid columns
-			text-align: center; // Center the message
-			font-size: var(--fs-md); // Medium font size
-			color: var(--clr-txt-secondary-on-bg-primary); // Secondary text color
-			padding: var(--spacing-6xl) 0; // Vertical padding
+			grid-column: 1 / -1;
+			text-align: center;
+			font-size: var(--fs-md);
+			color: var(--clr-txt-secondary-on-bg-primary);
+			padding: var(--spacing-6xl) 0;
 		}
 	}
 

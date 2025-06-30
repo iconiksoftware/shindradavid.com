@@ -58,6 +58,7 @@
 	--clr-txt-primary-on-btn-bg-primary: var(--clr-txt-primary-on-bg-accent-1);
 	--clr-txt-secondary-on-btn-bg-primary: hsl(0, 0%, 40%);
 	--clr-btn-bg-secondary: hsl(0, 0%, 22%);
+	--clr-btn-bg-secondary-hover: hsl(0, 0%, 28%); // Slightly lighter for hover
 	--clr-txt-primary-on-btn-bg-secondary: hsl(0, 0%, 100%);
 	--clr-txt-secondary-on-btn-bg-secondary: hsl(0, 0%, 70%);
 
@@ -89,8 +90,15 @@
 	--clr-divider-tertiary-on-bg-info: hsl(221, 83%, 40%);
 
 	// shadow color
-	--clr-shadow: hsla(0, 0%, 0%, 0.4);
+	--clr-shadow: hsla(0, 0%, 25%, 0.4);
 	--clr-accent-shadow: hsla(40, 97%, 54%, 0.4);
+
+	--shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+	--shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+	--shadow-md: 0 4px 6px -1px var(--clr-shadow), 0 2px 4px -2px var(--clr-shadow);
+	--shadow-lg: 0 10px 15px -3px var(--clr-shadow), 0 4px 6px -4px var(--clr-shadow);
+	--shadow-xl: 0 20px 25px -5px var(--clr-shadow), 0 8px 10px -6px var(--clr-shadow);
+	--shadow-2xl: 0 25px 50px -12px rgb(0 0 0 / 0.25);
 }
 
 @mixin light-theme {
@@ -107,9 +115,9 @@
 
 	// bg primary
 	--clr-bg-primary: #fff;
-	--clr-txt-primary-on-bg-primary: hsl(240, 8%, 9%);
-	--clr-txt-secondary-on-bg-primary: hsl(240, 8%, 30%);
-	--clr-txt-tertiary-on-bg-primary: hsl(240, 8%, 50%);
+	--clr-txt-primary-on-bg-primary: hsl(240, 8%, 5%); // Darker for better contrast
+	--clr-txt-secondary-on-bg-primary: hsl(240, 8%, 15%); // Darker for better contrast
+	--clr-txt-tertiary-on-bg-primary: hsl(240, 8%, 35%); // Darker for better contrast
 	--clr-txt-error-on-bg-primary: var(--clr-error);
 	--clr-txt-success-on-bg-primary: var(--clr-ok);
 	--clr-txt-warning-on-bg-primary: var(--clr-warning);
@@ -120,9 +128,9 @@
 
 	// bg secondary
 	--clr-bg-secondary: hsl(0, 0%, 97%);
-	--clr-txt-primary-on-bg-secondary: hsl(240, 8%, 9%);
-	--clr-txt-secondary-on-bg-secondary: hsl(240, 8%, 30%);
-	--clr-txt-tertiary-on-bg-secondary: hsl(240, 8%, 50%);
+	--clr-txt-primary-on-bg-secondary: hsl(240, 8%, 5%); // Darker for better contrast
+	--clr-txt-secondary-on-bg-secondary: hsl(240, 8%, 15%); // Darker for better contrast
+	--clr-txt-tertiary-on-bg-secondary: hsl(240, 8%, 35%); // Darker for better contrast
 	--clr-txt-error-on-bg-secondary: var(--clr-error);
 	--clr-txt-success-on-bg-secondary: var(--clr-ok);
 	--clr-txt-warning-on-bg-secondary: var(--clr-warning);
@@ -133,9 +141,9 @@
 
 	// bg tertiary
 	--clr-bg-tertiary: hsl(0, 0%, 92%);
-	--clr-txt-primary-on-bg-tertiary: hsl(240, 8%, 9%);
-	--clr-txt-secondary-on-bg-tertiary: hsl(240, 8%, 30%);
-	--clr-txt-tertiary-on-bg-tertiary: hsl(240, 8%, 50%);
+	--clr-txt-primary-on-bg-tertiary: hsl(240, 8%, 5%); // Darker for better contrast
+	--clr-txt-secondary-on-bg-tertiary: hsl(240, 8%, 15%); // Darker for better contrast
+	--clr-txt-tertiary-on-bg-tertiary: hsl(240, 8%, 35%); // Darker for better contrast
 	--clr-txt-error-on-bg-tertiary: var(--clr-error);
 	--clr-txt-success-on-bg-tertiary: var(--clr-ok);
 	--clr-txt-warning-on-bg-tertiary: var(--clr-warning);
@@ -149,6 +157,9 @@
 	--clr-txt-primary-on-btn-bg-primary: hsl(210, 11%, 11%);
 	--clr-txt-secondary-on-btn-bg-primary: hsl(0, 0%, 30%);
 	--clr-btn-bg-secondary: hsl(0, 0%, 85%);
+	--clr-btn-bg-secondary-hover: var(
+		--clr-bg-tertiary
+	); // Using existing tertiary background for hover
 	--clr-txt-primary-on-btn-bg-secondary: hsl(240, 8%, 9%);
 	--clr-txt-secondary-on-btn-bg-secondary: hsl(0, 0%, 50%);
 
@@ -182,6 +193,13 @@
 	// shadow color
 	--clr-shadow: hsla(0, 0%, 0%, 0.08);
 	--clr-accent-shadow: hsla(40, 97%, 54%, 0.25);
+
+	--shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+	--shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+	--shadow-md: 0 4px 6px -1px var(--clr-shadow), 0 2px 4px -2px var(--clr-shadow);
+	--shadow-lg: 0 10px 15px -3px var(--clr-shadow), 0 4px 6px -4px var(--clr-shadow);
+	--shadow-xl: 0 20px 25px -5px var(--clr-shadow), 0 8px 10px -6px var(--clr-shadow);
+	--shadow-2xl: 0 25px 50px -12px rgb(0 0 0 / 0.25);
 }
 
 body[data-theme='system'] {

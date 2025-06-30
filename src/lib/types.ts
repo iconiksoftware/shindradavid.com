@@ -12,7 +12,7 @@ export interface Post extends Frontmatter {
 
 export type Theme = 'dark' | 'light' | 'system';
 
-export type Project = {
+export interface ProjectFrontmatter {
 	id: number;
 	title: string;
 	description: string;
@@ -20,4 +20,12 @@ export type Project = {
 	technologies: string[];
 	image: string;
 	link: string;
-};
+	client: string;
+	thumbnailUrl: string;
+	liveUrl: string | undefined;
+	publishedOn: string;
+}
+
+export interface Project extends ProjectFrontmatter {
+	slug: string;
+}
