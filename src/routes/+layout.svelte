@@ -115,7 +115,7 @@
 		width: 86vw;
 		border-radius: 280px;
 		box-shadow: var(--shadow-md);
-		border: 1px solid var(--clr-outline-primary-on-bg-primary);
+		border: 1px solid var(--clr-divider-primary-on-bg-primary);
 
 		@include utils.respond-to('lg-screens') {
 			width: 72vw;
@@ -159,7 +159,7 @@
 			height: 48px;
 			width: 48px;
 			border-radius: 50%;
-			border: 1px solid var(--clr-outline-primary-on-bg-primary);
+			border: 1px solid var(--clr-divider-primary-on-bg-primary);
 			display: flex;
 			align-items: center;
 			justify-content: center;
@@ -185,7 +185,7 @@
 		backdrop-filter: blur(4px);
 		padding: var(--spacing-lg) 0;
 		border-radius: 28px;
-		border: 1px solid var(--clr-outline-primary-on-bg-primary);
+		border: 1px solid var(--clr-divider-primary-on-bg-primary);
 
 		/* Transition effect */
 		max-height: 0;
@@ -218,7 +218,7 @@
 		gap: var(--spacing-xs);
 		margin: var(--spacing-lg) 0 0 0;
 		padding: var(--spacing-lg) 0;
-		border-top: 1px solid var(--clr-outline-secondary-on-bg-primary);
+		border-top: 1px solid var(--clr-divider-secondary-on-bg-primary);
 		@include utils.add-section-lr-padding();
 
 		p {
