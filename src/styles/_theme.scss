@@ -113,57 +113,57 @@
 	--clr-bg-accent: #be1e2d;
 	--clr-txt-primary-on-bg-accent: #fafafa;
 
-	// bg primary
-	--clr-bg-primary: #fff;
-	--clr-txt-primary-on-bg-primary: hsl(240, 8%, 5%); // Darker for better contrast
-	--clr-txt-secondary-on-bg-primary: hsl(240, 8%, 15%); // Darker for better contrast
-	--clr-txt-tertiary-on-bg-primary: hsl(240, 8%, 35%); // Darker for better contrast
+	// bg primary - Softened white with a very subtle cool hue
+	--clr-bg-primary: hsl(210, 10%, 98%);
+	--clr-txt-primary-on-bg-primary: hsl(210, 8%, 10%); // Darker, but less stark black
+	--clr-txt-secondary-on-bg-primary: hsl(210, 8%, 25%); // Darker, softer gray
+	--clr-txt-tertiary-on-bg-primary: hsl(210, 8%, 45%); // Darker, softer gray
 	--clr-txt-error-on-bg-primary: var(--clr-error);
 	--clr-txt-success-on-bg-primary: var(--clr-ok);
 	--clr-txt-warning-on-bg-primary: var(--clr-warning);
 	--clr-txt-info-on-bg-primary: var(--clr-info);
-	--clr-divider-primary-on-bg-primary: hsl(0, 0%, 0%);
-	--clr-divider-secondary-on-bg-primary: hsl(0, 0%, 10%);
-	--clr-divider-tertiary-on-bg-primary: hsl(0, 0%, 20%);
+	--clr-divider-primary-on-bg-primary: hsl(0, 0%, 16%); // Adjusted divider
+	--clr-divider-secondary-on-bg-primary: hsl(0, 0%, 32%); // Adjusted divider
+	--clr-divider-tertiary-on-bg-primary: hsl(0, 0%, 40%); // Adjusted divider
 
-	// bg secondary
-	--clr-bg-secondary: hsl(0, 0%, 97%);
-	--clr-txt-primary-on-bg-secondary: hsl(240, 8%, 5%); // Darker for better contrast
-	--clr-txt-secondary-on-bg-secondary: hsl(240, 8%, 15%); // Darker for better contrast
-	--clr-txt-tertiary-on-bg-secondary: hsl(240, 8%, 35%); // Darker for better contrast
+	// bg secondary - Slightly darker than primary background
+	--clr-bg-secondary: hsl(210, 10%, 95%);
+	--clr-txt-primary-on-bg-secondary: hsl(210, 8%, 10%); // Consistent dark text
+	--clr-txt-secondary-on-bg-secondary: hsl(210, 8%, 25%); // Consistent secondary text
+	--clr-txt-tertiary-on-bg-secondary: hsl(210, 8%, 45%); // Consistent tertiary text
 	--clr-txt-error-on-bg-secondary: var(--clr-error);
 	--clr-txt-success-on-bg-secondary: var(--clr-ok);
 	--clr-txt-warning-on-bg-secondary: var(--clr-warning);
 	--clr-txt-info-on-bg-secondary: var(--clr-info);
-	--clr-divider-primary-on-bg-secondary: hsl(0, 0%, 80%);
-	--clr-divider-secondary-on-bg-secondary: hsl(0, 0%, 70%);
-	--clr-divider-tertiary-on-bg-secondary: hsl(0, 0%, 60%);
+	--clr-divider-primary-on-bg-secondary: hsl(210, 5%, 80%); // Adjusted divider
+	--clr-divider-secondary-on-bg-secondary: hsl(210, 5%, 70%); // Adjusted divider
+	--clr-divider-tertiary-on-bg-secondary: hsl(210, 5%, 60%); // Adjusted divider
 
-	// bg tertiary
-	--clr-bg-tertiary: hsl(0, 0%, 92%);
-	--clr-txt-primary-on-bg-tertiary: hsl(240, 8%, 5%); // Darker for better contrast
-	--clr-txt-secondary-on-bg-tertiary: hsl(240, 8%, 15%); // Darker for better contrast
-	--clr-txt-tertiary-on-bg-tertiary: hsl(240, 8%, 35%); // Darker for better contrast
+	// bg tertiary - Slightly darker than secondary background
+	--clr-bg-tertiary: hsl(210, 10%, 90%);
+	--clr-txt-primary-on-bg-tertiary: hsl(210, 8%, 10%); // Consistent dark text
+	--clr-txt-secondary-on-bg-tertiary: hsl(210, 8%, 25%); // Consistent secondary text
+	--clr-txt-tertiary-on-bg-tertiary: hsl(210, 8%, 45%); // Consistent tertiary text
 	--clr-txt-error-on-bg-tertiary: var(--clr-error);
 	--clr-txt-success-on-bg-tertiary: var(--clr-ok);
 	--clr-txt-warning-on-bg-tertiary: var(--clr-warning);
 	--clr-txt-info-on-bg-tertiary: var(--clr-info);
-	--clr-divider-primary-on-bg-tertiary: hsl(0, 0%, 75%);
-	--clr-divider-secondary-on-bg-tertiary: hsl(0, 0%, 65%);
-	--clr-divider-tertiary-on-bg-tertiary: hsl(0, 0%, 55%);
+	--clr-divider-primary-on-bg-tertiary: hsl(0, 0%, 29%); // Adjusted divider
+	--clr-divider-secondary-on-bg-tertiary: hsl(0, 0%, 20%); // Adjusted divider
+	--clr-divider-tertiary-on-bg-tertiary: hsl(0, 0%, 16%); // Adjusted divider
 
 	// bg button
 	--clr-btn-bg-primary: var(--clr-accent-1);
 	--clr-txt-primary-on-btn-bg-primary: hsl(210, 11%, 11%);
 	--clr-txt-secondary-on-btn-bg-primary: hsl(0, 0%, 30%);
-	--clr-btn-bg-secondary: hsl(0, 0%, 85%);
+	--clr-btn-bg-secondary: hsl(210, 10%, 85%); // Adjusted to match new background tones
 	--clr-btn-bg-secondary-hover: var(
 		--clr-bg-tertiary
 	); // Using existing tertiary background for hover
-	--clr-txt-primary-on-btn-bg-secondary: hsl(240, 8%, 9%);
-	--clr-txt-secondary-on-btn-bg-secondary: hsl(0, 0%, 50%);
+	--clr-txt-primary-on-btn-bg-secondary: hsl(210, 8%, 10%); // Consistent dark text
+	--clr-txt-secondary-on-btn-bg-secondary: hsl(210, 8%, 50%); // Consistent secondary text
 
-	// bg error
+	// bg error, success, info, warning - keeping as is, but ensure text colors inside are consistent
 	--clr-bg-error: hsla(0, 86%, 44%, 0.15);
 	--clr-txt-primary-on-bg-error: var(--clr-error);
 	--clr-txt-secondary-on-bg-error: hsl(0, 86%, 35%);
@@ -172,7 +172,6 @@
 	--clr-divider-secondary-on-bg-error: hsl(0, 86%, 35%);
 	--clr-divider-tertiary-on-bg-error: hsl(0, 86%, 30%);
 
-	// bg success
 	--clr-bg-success: hsla(142, 72%, 29%, 0.15);
 	--clr-txt-primary-on-bg-success: var(--clr-ok);
 	--clr-txt-secondary-on-bg-success: hsl(142, 72%, 40%);
@@ -181,7 +180,6 @@
 	--clr-divider-secondary-on-bg-success: hsl(142, 72%, 25%);
 	--clr-divider-tertiary-on-bg-success: hsl(142, 72%, 20%);
 
-	// bg info
 	--clr-bg-info: hsla(221, 83%, 53%, 0.15);
 	--clr-txt-primary-on-bg-info: var(--clr-info);
 	--clr-txt-secondary-on-bg-info: hsl(221, 83%, 40%);
@@ -190,8 +188,8 @@
 	--clr-divider-secondary-on-bg-info: hsl(221, 83%, 45%);
 	--clr-divider-tertiary-on-bg-info: hsl(221, 83%, 40%);
 
-	// shadow color
-	--clr-shadow: hsla(0, 0%, 0%, 0.08);
+	// shadow color - keeping as is, but consider if they need softening too
+	--clr-shadow: hsla(0, 0%, 0%, 0.08); // Keep light for light theme
 	--clr-accent-shadow: hsla(40, 97%, 54%, 0.25);
 
 	--shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);

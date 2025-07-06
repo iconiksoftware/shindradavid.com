@@ -37,7 +37,7 @@
 		justify-content: center;
 		gap: var(--spacing-sm);
 		background: var(--clr-bg-primary);
-		border: 1px solid #ffffff;
+		border: 1px solid var(--clr-divider-primary-on-bg-primary);
 		border-radius: 56px;
 		padding: 4px;
 		width: fit-content;

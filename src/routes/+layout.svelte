@@ -45,7 +45,7 @@
 	<nav class="header__desktop-nav">
 		<NavLink href="/" name="Home" />
 		<NavLink href="/about-me" name="About me" />
-		<!-- <NavLink href="/what-i-do" name="What I do" /> -->
+		<NavLink href="/work-experience" name="Work experience" />
 		<NavLink href="/my-work" name="My work" />
 		<NavLink href="/blog" name="Blog" />
 	</nav>
@@ -69,7 +69,7 @@
 >
 	<NavLink href="/" name="Home" />
 	<NavLink href="/about-me" name="About me" />
-	<!-- <NavLink href="/what-i-do" name="What I do" /> -->
+	<NavLink href="/work-experience" name="Work experience" />
 	<NavLink href="/my-work" name="My work" />
 	<NavLink href="/blog" name="Blog" />
 

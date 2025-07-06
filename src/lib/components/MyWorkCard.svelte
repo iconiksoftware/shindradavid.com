@@ -4,10 +4,8 @@
 	let { project }: { project: Project } = $props();
 </script>
 
-<!-- The main container for a single project card -->
 <a href="/my-work/{project.slug}" class="project-card-link">
 	<article class="project-card">
-		<!-- Project Image -->
 		<div class="aspect-ratio-16x9">
 			<img src={project.thumbnailUrl} alt={project.title} class="project-image" />
 		</div>

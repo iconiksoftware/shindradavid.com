@@ -31,9 +31,14 @@
 		.post {
 			background-color: var(--clr-bg-secondary);
 			border-radius: var(--radius-base);
+			box-shadow: var(--shadow-md);
+			transition:
+				transform var(--animation-speed-normal) var(--animation-fn-ease-out),
+				box-shadow var(--animation-speed-normal) var(--animation-fn-ease-out);
 
 			&:hover {
-				box-shadow: var(--shadow-sm);
+				transform: translateY(-5px);
+				box-shadow: var(--shadow-lg);
 			}
 
 			.details {
