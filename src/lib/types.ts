@@ -29,3 +29,22 @@ export interface ProjectFrontmatter {
 export interface Project extends ProjectFrontmatter {
 	slug: string;
 }
+
+export interface ExperienceFrontmatter {
+	id: number;
+	order: string;
+	duration: string;
+	title: string;
+	company: string;
+	description: string;
+	technologies: string[];
+	link: string;
+	images: {
+		src: string;
+		caption: string;
+	}[];
+}
+
+export interface WorkExperience extends ExperienceFrontmatter {
+	slug: string;
+}

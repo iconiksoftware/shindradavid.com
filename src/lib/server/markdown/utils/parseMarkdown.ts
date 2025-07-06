@@ -47,7 +47,7 @@ export default async <F>(markdown: string) => {
 		.use(rehypeStringify, { allowDangerousHtml: true })
 		.use(rehypeSlug)
 		.use(rehypeAutolinkHeadings, { behavior: 'append' })
-		.use(rehypeToc)
+		// .use(rehypeToc)
 		.use(rehypeCopyCode)
 		.process(searchAndReplace(content));
 

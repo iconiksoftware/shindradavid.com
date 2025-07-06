@@ -25,36 +25,27 @@
 </a>
 
 <style lang="scss">
-	// Import your SASS partials. Adjust paths if necessary based on your project structure.
-	// Assuming your utility mixins and variables are in src/styles/utils.scss
 	@use '../../styles/utils';
 
 	.project-card-link {
-		text-decoration: none; // Remove underline from the link
+		text-decoration: none;
 
 		.project-card {
-			background-color: var(--clr-bg-secondary); // Secondary background for cards
-			border-radius: var(--radius-sm); // Rounded corners for cards
-			overflow: hidden; // Hide content that overflows rounded corners
-			box-shadow: var(--shadow-md); // Apply medium shadow
-			display: flex; // Use flexbox for internal layout (image on top, content below)
-			flex-direction: column; // Stack items vertically
-			height: 100%; // Ensure cards in a grid have consistent height
+			background-color: var(--clr-bg-secondary);
+			border-radius: var(--radius-sm);
+			box-shadow: var(--shadow-md);
 			transition:
 				transform var(--animation-speed-normal) var(--animation-fn-ease-out),
-				box-shadow var(--animation-speed-normal) var(--animation-fn-ease-out); // Smooth transitions for hover effects
+				box-shadow var(--animation-speed-normal) var(--animation-fn-ease-out);
 
 			&:hover {
-				transform: translateY(-5px); // Lift card slightly on hover
-				box-shadow: var(--shadow-lg); // Increase shadow on hover
+				transform: translateY(-5px);
+				box-shadow: var(--shadow-lg);
 			}
 
 			.project-image {
-				width: 100%; // Image takes full width of card
-				height: 200px; // Fixed height for consistent card appearance
-				object-fit: cover; // Cover the area, cropping if necessary
-				display: block; // Ensure image behaves as a block element
-				border-bottom: 1px solid var(--clr-divider-primary-on-bg-secondary); // Subtle divider below image
+				border-top-left-radius: var(--radius-base);
+				border-top-right-radius: var(--radius-base);
 			}
 
 			.project-content {
@@ -71,13 +62,6 @@
 					margin-bottom: var(--spacing-sm); // Space below title
 				}
 
-				.project-description {
-					font-size: var(--fs-base); // Small font size for description
-					color: var(--clr-txt-secondary-on-bg-secondary); // Secondary text color for description
-					margin-bottom: var(--spacing-md); // Space below description
-					flex-grow: 1; // Allow description to take up remaining space, pushing button down
-				}
-
 				.project-meta {
 					display: flex;
 					flex-direction: column;
@@ -85,8 +69,7 @@
 					margin-top: var(--spacing-sm); // Top margin
 					margin-bottom: var(--spacing-md); // Bottom margin
 
-					.category-tag,
-					.tech-tag {
+					.category-tag {
 						width: fit-content;
 						font-size: var(--fs-xs); // Extra small font size for tags
 						padding: var(--spacing-xs) var(--spacing-sm); // Padding for tags
@@ -97,12 +80,6 @@
 					.category-tag {
 						background-color: var(--clr-accent); // Use accent color for category tag
 						color: var(--clr-txt-primary-on-bg-accent); // Text color on accent background
-					}
-
-					.tech-tag {
-						background-color: var(--clr-bg-tertiary); // Tertiary background for tech tags
-						color: var(--clr-txt-tertiary-on-bg-secondary); // Tertiary text color
-						margin-left: var(--spacing-xs);
 					}
 				}
 

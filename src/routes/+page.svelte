@@ -1,8 +1,7 @@
 <script lang="ts">
 	import type { PageData } from './$types';
 
-	import { type Experience } from '$lib/components/WorkExperience.svelte';
-	import { PostCard, WorkExperience } from '$lib/components';
+	import { PostCard, WorkExperienceCard, MyWorkCard } from '$lib/components';
 
 	interface Props {
 		data: PageData;
@@ -10,72 +9,7 @@
 
 	let { data }: Props = $props();
 
-	const { posts, projects } = data;
-
-	// Define your work experience data here
-	const myExperiences: Experience[] = [
-		{
-			id: 1,
-			date: 'May 18, 2023 – Present',
-			title: 'Head IT & Software Developer',
-			company: 'Maurice Cakes & Events',
-			description:
-				'Led all technology initiatives, focusing on internal operations and customer-facing platforms. Spearheaded the migration from Firebase to a self-hosted VPS, significantly reducing operational costs and enhancing system flexibility.',
-			responsibilities: [
-				'Designed and implemented a new internal system (PostgreSQL, Express.js, React) for orders, finance, and events.',
-				'Developed and maintained customer-facing e-commerce website and mobile app (React, React Native).',
-				'Managed IT infrastructure and ensured system stability and security.',
-				'Optimized IT expenditure by migrating from usage-based cloud services to a cost-effective VPS solution.'
-			],
-			achievements: [
-				'Reduced IT expenditure by a significant margin (e.g., 80%) through strategic platform migration.',
-				'Enhanced system flexibility and innovation by moving away from restrictive usage-based billing models.',
-				'Successfully deployed and maintained a custom full-stack solution for critical business operations.'
-			],
-			technologiesUsed: [
-				'React',
-				'React Native',
-				'Node.js',
-				'Express.js',
-				'PostgreSQL',
-				'TypeScript',
-				'Docker',
-				'Nginx'
-			],
-			link: '#' // Link to Maurice Group's website or a detailed case study if you make one
-		},
-		{
-			id: 2,
-			date: 'Nov, 2021 – Present',
-			title: 'Freelance Software Developer & Designer',
-			company: 'Self-Employed',
-			description:
-				'Provide end-to-end software development and design services to various clients, specializing in web and mobile application development and graphic design.',
-			responsibilities: [
-				'Consulted with clients to gather requirements and define project scopes.',
-				'Developed custom web applications (frontend and backend) and mobile apps.',
-				'Designed UI/UX for digital products and created brand identities/marketing materials.',
-				'Managed project timelines, client communication, and delivery of high-quality solutions.'
-			],
-			achievements: [
-				'Successfully delivered multiple projects for diverse clients, enhancing their digital presence and operational efficiency.',
-				'Built strong client relationships through effective communication and reliable project delivery.',
-				'Continuously learned and adapted to new technologies and design trends to meet client needs.'
-			],
-			technologiesUsed: [
-				'React',
-				'Svelte/SvelteKit',
-				'Node.js',
-				'Python',
-				'MongoDB',
-				'PostgreSQL',
-				'Figma',
-				'Adobe Illustrator',
-				'Photoshop'
-			],
-			link: '/my-work' // Link to your "My Work" page to show freelance projects
-		}
-	];
+	const { posts, projects, workExperience } = data;
 </script>
 
 <main>
@@ -99,7 +33,7 @@
 		</header>
 
 		<div class="posts__container">
-			{#each posts as post}
+			{#each posts.slice(0, 3) as post}
 				<PostCard {post} />
 			{/each}
 		</div>
@@ -107,7 +41,34 @@
 		<a href="/blog" class="posts__cta btn btn-primary">View all</a>
 	</section>
 
-	<WorkExperience experiences={myExperiences} />
+	<section class="projects">
+		<header class="projects__header">
+			<h2 class="title">My work</h2>
+			<p class="subtitle">Stay updated with my work.</p>
+		</header>
+
+		<div class="projects__container">
+			{#each projects.slice(0, 3) as project}
+				<MyWorkCard {project} />
+			{/each}
+		</div>
+
+		<a href="/my-work" class="projects__cta btn btn-primary">View all</a>
+	</section>
+
+	<section class="work-experience-section">
+		<h2>Work Experience</h2>
+		<p class="intro-paragraph">
+			My journey in software development and design has been shaped by diverse roles, from
+			freelancing to leading IT initiatives at Maurice Group.
+		</p>
+
+		<div class="experience-list">
+			{#each workExperience as experience (experience.order)}
+				<WorkExperienceCard {experience} />
+			{/each}
+		</div>
+	</section>
 </main>
 
 <style lang="scss">
@@ -152,7 +113,7 @@
 		}
 		&__container {
 			display: grid;
-			grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+			grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 			justify-items: center;
 			gap: var(--spacing-lg);
 		}
@@ -161,5 +122,70 @@
 			margin-top: var(--spacing-md);
 			margin-bottom: var(--spacing-lg);
 		}
+	}
+
+	.projects {
+		&__header {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			justify-self: center;
+			align-self: center;
+			margin-top: var(--spacing-sm);
+			margin-bottom: var(--spacing-xl);
+
+			p {
+				text-align: center;
+			}
+
+			@include utils.respond-to('md-screens') {
+				max-width: 40vw;
+			}
+		}
+
+		&__container {
+			display: grid;
+			gap: var(--spacing-lg);
+			grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+		}
+
+		&__cta {
+			display: flex;
+			justify-self: center;
+			align-self: center;
+			margin-top: var(--spacing-md);
+			margin-bottom: var(--spacing-lg);
+		}
+	}
+
+	.work-experience-section {
+		padding-top: var(--spacing-9xl);
+		padding-bottom: var(--spacing-9xl);
+		background-color: var(--clr-bg-primary);
+		color: var(--clr-txt-primary-on-bg-primary);
+
+		h2 {
+			text-align: center;
+			font-size: var(--fs-2xl);
+			margin-bottom: var(--spacing-md);
+			color: var(--clr-txt-primary-on-bg-primary);
+		}
+
+		.intro-paragraph {
+			text-align: center;
+			font-size: var(--fs-md);
+			max-width: 700px;
+			margin: 0 auto var(--spacing-6xl) auto;
+			color: var(--clr-txt-secondary-on-bg-primary);
+		}
+	}
+
+	.experience-list {
+		display: flex;
+		flex-direction: column;
+		gap: var(--spacing-3xl);
+		max-width: 900px;
+		margin: 0 auto;
 	}
 </style>
