@@ -1,6 +1,5 @@
 <script lang="ts">
-	import { WorkExperienceCard } from '$lib/components';
-	import MyWorkCard from '$lib/components/MyWorkCard.svelte';
+	import { Seo, WorkExperienceCard } from '$lib/components';
 
 	import type { PageData } from './$types';
 
@@ -12,6 +11,11 @@
 
 	const { workExperience } = data;
 </script>
+
+<Seo
+	title="Work Experience | Shindra David"
+	description="Discover my journey as a full-stack developer — from learning HTML and Python to mastering SvelteKit, NestJS, and React Native. See how my experience shapes the work I do today."
+/>
 
 <main class="main work-page">
 	<section class="work-experience-section">

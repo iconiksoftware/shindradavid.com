@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { Seo } from '$lib/components';
 	import {
 		Linux,
 		Figma,
@@ -87,6 +88,11 @@
 		}
 	];
 </script>
+
+<Seo
+	title="About Me | Shindra David"
+	description="Learn more about my journey from business school to full-stack development. I’m passionate about coding, design, and building software that solves real problems and inspires creativity."
+/>
 
 <main>
 	<header class="page-header">

@@ -20,7 +20,7 @@
 </script>
 
 <svelte:head>
-	<title>{title} | Shindra David</title>
+	<title>{title}</title>
 	<meta name="description" content={description} />
 	<meta name="image" content={new URL(ogImage, siteUrl).toString()} />
 	<link rel="canonical" href={new URL(page.url.pathname, siteUrl).toString()} />

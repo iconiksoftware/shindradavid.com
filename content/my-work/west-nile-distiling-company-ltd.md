@@ -8,5 +8,5 @@ technologies:
   - Svelte
   - Sveltekit
 client: West Nile Distilling Company LTD
-liveUrl: https://adriko.com
+liveUrl: https://adriko.iconiksoftware.com
 ---

@@ -1,7 +1,7 @@
 <script lang="ts">
 	import type { PageData } from './$types';
 
-	import { PostCard } from '$lib/components';
+	import { PostCard, Seo } from '$lib/components';
 
 	interface Props {
 		data: PageData;
@@ -11,6 +11,11 @@
 
 	const { posts } = data;
 </script>
+
+<Seo
+	title="Blog | Shindra David"
+	description="Read articles, tutorials, and insights on web development, mobile apps, JavaScript frameworks, and my personal journey as a self-taught developer in Uganda."
+/>
 
 <main class="main">
 	<header class="page-header">

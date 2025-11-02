@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { Seo } from '$lib/components';
 	import MyWorkCard from '$lib/components/MyWorkCard.svelte';
 
 	import type { PageData } from './$types';
@@ -22,6 +23,11 @@
 		})
 	);
 </script>
+
+<Seo
+	title="My Work | Shindra David"
+	description="Explore my portfolio of web and mobile app projects built with SvelteKit, React, React Native, Node.js, and PostgreSQL. See how I bring ideas to life through clean code and creative design."
+/>
 
 <main class="main work-page">
 	<section class="page-header hero-section">

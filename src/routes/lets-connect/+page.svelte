@@ -1,4 +1,6 @@
 <script lang="ts">
+	import { Seo } from '$lib/components';
+
 	const socialLinks = [
 		{
 			icon: 'ri-whatsapp-fill',
@@ -32,6 +34,11 @@
 		}
 	];
 </script>
+
+<Seo
+	title="Let's Connect | Shindra David"
+	description="Have a project idea or collaboration in mind? Get in touch with me for web development, mobile app design, or digital solutions. Let’s build something impactful together."
+/>
 
 <main>
 	<section class="connect-page">
@@ -105,7 +112,7 @@
 
 					&:hover {
 						border-color: var(--clr-accent-1);
-						background-color: var(--clr-bg-secondary);
+						transform: translateY(-5px);
 					}
 
 					i {

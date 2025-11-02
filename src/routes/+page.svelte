@@ -1,7 +1,7 @@
 <script lang="ts">
 	import type { PageData } from './$types';
 
-	import { PostCard, WorkExperienceCard, MyWorkCard } from '$lib/components';
+	import { PostCard, WorkExperienceCard, MyWorkCard, Seo } from '$lib/components';
 
 	interface Props {
 		data: PageData;
@@ -11,6 +11,11 @@
 
 	const { posts, projects, workExperience } = data;
 </script>
+
+<Seo
+	title="Shindra David – Full-Stack Developer & Graphic Designer in Uganda"
+	description="I’m Shindra David, a self-taught full-stack developer and graphic designer passionate about building modern web and mobile applications using Svelte, Node.js, and React. Explore my projects and journey in tech."
+/>
 
 <main>
 	<section class="hero">
